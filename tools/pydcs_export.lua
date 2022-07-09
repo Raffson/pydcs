@@ -350,7 +350,7 @@ from typing import Any, Dict, List, Set
 from dcs.weapons_data import Weapons
 import dcs.task as task
 from dcs.unittype import FlyingType
-import dcs.liveries_scanner as lscanner
+from dcs.liveries_scanner import Liveries
 
 ]])
     writeln(file, 'class '..export_type..'Type(FlyingType):')
@@ -514,12 +514,16 @@ import dcs.liveries_scanner as lscanner
         writeln(file, "")
         if schemes ~= nil and #schemes > 0 then
             if plane.livery_entry ~= nil then
-                writeln(file, '    Liveries = lscanner.liveries_map["'..string.upper(plane.livery_entry)..'"]  # from livery_entry')
+                local name = string.upper(plane.livery_entry)
+                writeln(file, '    livery_name = "'..name..'"')
+                writeln(file, '    Liveries = Liveries()[livery_name]  # from livery_entry')
             else if plane.type ~= nil then
                 local name = string.upper(string.gsub(plane.type, '/', '_'))
-                writeln(file, '    Liveries = lscanner.liveries_map["'..name..'"]  # from type')
+                writeln(file, '    livery_name = "'..name..'"')
+                writeln(file, '    Liveries = Liveries()[livery_name]  # from type')
             end end
         else
+            writeln(file, '    livery_name = None')
             writeln(file, '    Liveries = None')
         end
 
