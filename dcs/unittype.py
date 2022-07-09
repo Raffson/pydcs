@@ -83,7 +83,7 @@ class FlyingType(UnitType):
     property_defaults: Optional[Dict[str, Any]] = None
 
     pylons: Set[int] = set()
-    Liveries: Optional[Type[Any]] = None
+    Liveries: Optional[Dict[str, set[str] | None]] = None
     # Dict from payload name to the DCS payload structure. None if not yet initialized.
     payloads: Optional[Dict[str, Dict[str, Any]]] = None
 

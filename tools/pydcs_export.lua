@@ -73,6 +73,10 @@ local function has_value (tab, val)
     return false
 end
 
+function ternary ( cond , T , F )
+    if cond then return T else return F end
+end
+
 -------------------------------------------------------------------------------
 -- country to shortname mapping
 -------------------------------------------------------------------------------
@@ -350,6 +354,7 @@ from typing import Any, Dict, List, Set
 from dcs.weapons_data import Weapons
 import dcs.task as task
 from dcs.unittype import FlyingType
+import dcs.liveries_scanner as lscanner
 
 ]])
     writeln(file, 'class '..export_type..'Type(FlyingType):')
@@ -509,27 +514,17 @@ from dcs.unittype import FlyingType
             end
         end
 
-        local livery_written = false
-        for j in pairs(countries) do
-            local schemes = loadLiveries.loadSchemes(plane.type, countries[j])
-            if schemes ~= nil and #schemes > 0 then
-                if not livery_written then
-                    writeln(file, '')
-                    writeln(file, '    class Liveries:')
-                    livery_written = true
-                end
-
-                writeln(file, '')
-                writeln(file, '        class '..safe_name(j)..'(Enum):')
-                local dupcheck = {}
-                for k in pairs(schemes) do
-                    local liv_safe = safe_name(schemes[k].itemId)
-                    if dupcheck[liv_safe] == nil then
-                        writeln(file, '            '..liv_safe..' = "'..schemes[k].itemId..'"')
-                        dupcheck[liv_safe] = true
-                    end
-                end
-            end
+        local schemes = loadLiveries.loadSchemes(plane.type, nil) -- Get all possible liveries
+        writeln(file, "")
+        if schemes ~= nil and #schemes > 0 then
+            if plane.livery_entry ~= nil then
+                writeln(file, '    Liveries = lscanner.liveries_map["'..string.upper(plane.livery_entry)..'"]  # from livery_entry')
+            else if plane.type ~= nil then
+                local name = string.upper(string.gsub(plane.type, '/', '_'))
+                writeln(file, '    Liveries = lscanner.liveries_map["'..name..'"]  # from type')
+            end end
+        else
+            writeln(file, '    Liveries = None')
         end
 
         local pylons = {}
@@ -841,14 +836,19 @@ for i in pairs(db.Units.Ships.Ship) do
     if unit.airWeaponDist then
         air_weapon_dist = unit.airWeaponDist
     end
-    writeln(file, '    detection_range = '..unit.DetectionRange)
-    writeln(file, '    threat_range = '..unit.ThreatRange)
+    local detection_range = ternary((unit.DetectionRange ~= nil), unit.DetectionRange, 0)
+    local threat_range = ternary((unit.ThreatRange ~= nil), unit.ThreatRange, 0)
+    air_weapon_dist = ternary((air_weapon_dist ~= nil), air_weapon_dist, 0)
+    writeln(file, '    detection_range = '..detection_range)
+    writeln(file, '    threat_range = '..threat_range)
     writeln(file, '    air_weapon_dist = '..air_weapon_dist)
     --    writeln(file, '    shape_name = "'..unit.ShapeName..'"')
     --    writeln(file, '    rate = '..unit.Rate)
 end
 
 lookup_map(file, "ship", db.Units.Ships.Ship, false)
+
+file:close()
 
 -------------------------------------------------------------------------------
 -- export country data
