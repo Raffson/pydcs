@@ -3,7 +3,48 @@ import re
 import zipfile
 
 from dcs.installation import get_dcs_install_directory, get_dcs_saved_games_directory
-from typing import Optional, Dict, Iterator
+from typing import Optional, Dict, Iterator, Set
+
+
+def regex_group_extractor(regex: str, text: str, fallback=None):
+	match = re.search(regex, text)
+	if match is not None:
+		return match.group(1)
+	else:
+		return fallback
+
+
+class Livery:
+	id: str = ""
+	"""ID of the livery, corresponds with the folder-name of the livery."""
+
+	name: str = ""
+	"""Name of the livery"""
+
+	order: int = 0
+	"""Order of the livery used to sort like DCS"""
+
+	countries: set[str] | None = None
+	"""Set of short names indicating valid countries, with 'None' indicating all countries."""
+
+	def __init__(self, path_id: str, name: str, order: int, countries: Optional[Set[str]]) -> None:
+		self.id = path_id
+		self.name = name
+		self.order = order
+		self.countries = countries
+
+	def __str__(self) -> str:
+		return self.name
+
+	def __repr__(self) -> str:
+		return self.name
+
+	def __lt__(self, other):
+		if self.order == other.order:
+			return self.name < other.name
+		if self.order is None:
+			return True
+		return False if other.order is None else self.order < other.order
 
 
 class Liveries:
@@ -12,7 +53,7 @@ class Liveries:
 	Each livery has a set of countries to indicate applicability
 	"""
 
-	map: Dict[str, Dict[str, set[str] | None]] = {}
+	map: Dict[str, Set[Livery]] = {}
 	"""
 	A dictionary containing all liveries for each unit.
 	Mind that the unit uses the name of the livery folder, and not the ID.
@@ -24,17 +65,16 @@ class Liveries:
 
 	def __init__(self) -> None:
 		"""
-		Constructor for Liveries shouldn't be used explicitly.
 		Initialization happens upon import.
 		"""
 		if len(Liveries.map) == 0:
 			Liveries.scan_dcs_installation()
 			Liveries.scan_custom_liveries()
 
-	def __getitem__(self, unit: str) -> Optional[Dict[str, set[str] | None]]:
+	def __getitem__(self, unit: str) -> Optional[Set[Livery]]:
 		return Liveries.map.get(unit)
 
-	def __setitem__(self, unit: str, liveries: Dict[str, set[str] | None]) -> None:
+	def __setitem__(self, unit: str, liveries: Set[Livery]) -> None:
 		if unit in Liveries.map:
 			Liveries.map[unit].update(liveries)
 		else:
@@ -47,53 +87,39 @@ class Liveries:
 		return Liveries.map.__iter__()
 
 	@staticmethod
-	def add_or_append(unit: str, livery_name: str, country: Optional[str] = None) -> None:
-		"""
-		Appends country to the specified livery for the specified unit,
-		or creates a new set with the given country if the livery wasn't seen before
-		If country is None, it indicates the livery is valid for all countries.
-
-		:param unit: The name of the unit as 'DCS type',
-			i.e. name of the unit inside the Liveries folder, e.g. 'A-10CII'
-		:param livery_name: The name of the livery, e.g. '25th FS Osan AB, Korea (OS)'
-		:param country: Shorthand name of a country indicating applicability for the given livery.
-			'None' indicates all countries are valid for the given livery.
-		"""
-		if livery_name in Liveries.map[unit]:
-			if country is not None:
-				Liveries.map[unit][livery_name].add(country)
-		else:
-			Liveries.map[unit][livery_name] = country if country is None else {country}
-
-	@staticmethod
 	def scan_lua_code(luacode: str, path: str, unit: str) -> None:
 		"""
 		Scans the given code (expecting contents from a description.lua file)
 		to extract the name of the livery together with the countries for which the livery is applicable.
 		If no name is found, it defaults to the folder-name like DCS would.
 		If no countries are found, it means the livery is valid for all countries.
+		Finally we also attempt to extract the order to sort liveries like DCS.
+		If no order is found, we use a default value of 0.
 
 		:param luacode: The contents of description.lua for the livery in question
 		:param path: The path of the livery in question
 		:param unit: The name of the unit as 'DCS type',
 			i.e. name of the unit inside the Liveries folder, e.g. 'A-10CII'
 		"""
-		match = re.search(r'name\s*=\s*"(.*)"', luacode)
-		if match is not None:
-			livery_name = match.group(1)
-		else:
-			livery_name = path.split('\\')[-1].replace(".zip", "")
+		path_id = path.split('\\')[-1].replace(".zip", "")
+		livery_name = regex_group_extractor(r'name\s*=\s*"(.*)"', luacode, path_id)
 
-		match = re.search(r"countries\s*=\s*(\{.*\})", luacode)
-		if match is not None:
-			sanitizer = {"{": "", "}": "", "\"": "", " ": ""}
-			translation = str.maketrans(sanitizer)
-			country_list = match.group(1).translate(translation).split(',')
-			countries = set(filter(lambda x: x != "", country_list))
-			for country in countries:
-				Liveries.add_or_append(unit, livery_name, country)
-		else:
-			Liveries.add_or_append(unit, livery_name)
+		regex = r'countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})'
+		countries = regex_group_extractor(regex, luacode)
+		if countries is not None:
+			exec(f"country_list = {countries}")
+			countries = set(filter(lambda x: x != "", locals()['country_list']))
+
+		order = regex_group_extractor(r'order\s*=\s*(-?[0-9]+)', luacode, 0)
+		if not isinstance(order, int):
+			try:
+				order = int(order)
+			except ValueError:
+				order = 0
+		order = None if path_id == "default" else order
+		
+		livery = Livery(path_id, livery_name, order, countries)
+		Liveries()[unit] = {livery}
 
 	@staticmethod
 	def scan_lua_description(path: str, unit: str) -> None:
@@ -144,7 +170,7 @@ class Liveries:
 				# for the time being we don't want to load those...
 				continue
 			if unit not in Liveries.map:
-				Liveries.map[unit.upper()] = {}
+				Liveries.map[unit.upper()] = set()
 			liveries_path = os.path.join(path, unit)
 			for livery in os.listdir(liveries_path):
 				livery_path = os.path.join(liveries_path, livery)
@@ -199,20 +225,49 @@ Liveries()  # initialization
 
 
 if __name__ == "__main__":
-	from planes import FA_18C_hornet
+	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
 	f18 = FA_18C_hornet()
-	print(f18.livery_name, f18.Liveries)
+	print(f18.livery_name, sorted(f18.Liveries))
+	print(f18.default_livery("CAN"))
+	print(f18.default_livery("ISR"))
+	print(f18.default_livery("USA"))
+
+	f14 = F_14B()
+	print(f14.livery_name, sorted(f14.Liveries))
+	print(f14.default_livery("USA"))
+	print(f14.default_livery("ISR"))
+	print(f14.default_livery("GRC"))
+	print(f14.default_livery("POL"))
+
+	f15 = F_15E()
+	print(f15.livery_name, sorted(f15.Liveries))
+	print(f15.default_livery("USA"))
+	print(f15.default_livery("ISR"))
+	print(f15.default_livery("GRC"))
+	print(f15.default_livery("POL"))
+
+	a10c2 = A_10C_2()
+	print(a10c2.livery_name, sorted(a10c2.Liveries))
+	print(a10c2.default_livery("USA"))
+	print(a10c2.default_livery("ISR"))
+	print(a10c2.default_livery("GRC"))
+	print(a10c2.default_livery("POL"))
+
+	f16 = F_16C_50()
+	print(f16.livery_name, sorted(f16.Liveries))
+	print(f16.default_livery("USA"))
+	print(f16.default_livery("ISR"))
+	print(f16.default_livery("GRC"))
+	print(f16.default_livery("POL"))
 
 	from helicopters import AH_64D_BLK_II
 	ah64 = AH_64D_BLK_II()
-	print(ah64.livery_name, ah64.Liveries)
+	print(ah64.livery_name, sorted(ah64.Liveries))
+	print(ah64.default_livery("USA"))
+	print(ah64.default_livery("ISR"))
 
 	# skins = Liveries()
 	# for u in skins:
 	# 	print(u)
-	# 	for liv in skins[u]:
+	# 	for liv in sorted(skins[u]):
 	# 		print("\t", liv)
-	# 		if skins[u][liv] is None:
-	# 			print("\t\t All countries")
-	# 			continue
-	# 		print("\t\t", skins[u][liv])

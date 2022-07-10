@@ -430,20 +430,15 @@ from dcs.liveries_scanner import Liveries
 
         local schemes = loadLiveries.loadSchemes(plane.type, nil) -- Get all possible liveries
         writeln(file, "")
-        if schemes ~= nil and #schemes > 0 then
-            if plane.livery_entry ~= nil then
-                local name = string.upper(plane.livery_entry)
-                writeln(file, '    livery_name = "'..name..'"')
-                writeln(file, '    Liveries = Liveries()[livery_name]  # from livery_entry')
-            else if plane.type ~= nil then
-                local name = string.upper(string.gsub(plane.type, '/', '_'))
-                writeln(file, '    livery_name = "'..name..'"')
-                writeln(file, '    Liveries = Liveries()[livery_name]  # from type')
-            end end
-        else
-            writeln(file, '    livery_name = None')
-            writeln(file, '    Liveries = None')
-        end
+        if plane.livery_entry ~= nil then
+            local name = string.upper(plane.livery_entry)
+            writeln(file, '    livery_name = "'..name..'"')
+            writeln(file, '    Liveries = Liveries()[livery_name]  # from livery_entry')
+        else if schemes ~= nil and #schemes > 0 and plane.type ~= nil then
+            local name = string.upper(string.gsub(plane.type, '/', '_'))
+            writeln(file, '    livery_name = "'..name..'"')
+            writeln(file, '    Liveries = Liveries()[livery_name]  # from type')
+        end end
 
         local pylons = {}
 
@@ -965,7 +960,8 @@ while i <= country.maxIndex do
 
         writeln(file, '')
         writeln(file, '    def __init__(self):')
-        writeln(file, '        super('..pyName..', self).__init__('..pyName..'.id, '..pyName..'.name)')
+        local params = pyName..'.id, '..pyName..'.name, '..pyName..'.shortname'
+        writeln(file, '        super('..pyName..', self).__init__('..params..')')
     end
     i = i + 1
 end

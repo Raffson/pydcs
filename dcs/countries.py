@@ -478,7 +478,7 @@ class Russia(Country):
     }
 
     def __init__(self):
-        super(Russia, self).__init__(Russia.id, Russia.name)
+        super(Russia, self).__init__(Russia.id, Russia.name, Russia.shortname)
 
 
 class Ukraine(Country):
@@ -830,7 +830,7 @@ class Ukraine(Country):
     }
 
     def __init__(self):
-        super(Ukraine, self).__init__(Ukraine.id, Ukraine.name)
+        super(Ukraine, self).__init__(Ukraine.id, Ukraine.name, Ukraine.shortname)
 
 
 class USA(Country):
@@ -1286,7 +1286,7 @@ class USA(Country):
     }
 
     def __init__(self):
-        super(USA, self).__init__(USA.id, USA.name)
+        super(USA, self).__init__(USA.id, USA.name, USA.shortname)
 
 
 class Turkey(Country):
@@ -1633,7 +1633,7 @@ class Turkey(Country):
     }
 
     def __init__(self):
-        super(Turkey, self).__init__(Turkey.id, Turkey.name)
+        super(Turkey, self).__init__(Turkey.id, Turkey.name, Turkey.shortname)
 
 
 class UK(Country):
@@ -1990,7 +1990,7 @@ class UK(Country):
     }
 
     def __init__(self):
-        super(UK, self).__init__(UK.id, UK.name)
+        super(UK, self).__init__(UK.id, UK.name, UK.shortname)
 
 
 class France(Country):
@@ -2327,7 +2327,7 @@ class France(Country):
     }
 
     def __init__(self):
-        super(France, self).__init__(France.id, France.name)
+        super(France, self).__init__(France.id, France.name, France.shortname)
 
 
 class Germany(Country):
@@ -2751,7 +2751,7 @@ class Germany(Country):
     }
 
     def __init__(self):
-        super(Germany, self).__init__(Germany.id, Germany.name)
+        super(Germany, self).__init__(Germany.id, Germany.name, Germany.shortname)
 
 
 class USAFAggressors(Country):
@@ -3489,7 +3489,7 @@ class USAFAggressors(Country):
     }
 
     def __init__(self):
-        super(USAFAggressors, self).__init__(USAFAggressors.id, USAFAggressors.name)
+        super(USAFAggressors, self).__init__(USAFAggressors.id, USAFAggressors.name, USAFAggressors.shortname)
 
 
 class Canada(Country):
@@ -3821,7 +3821,7 @@ class Canada(Country):
     }
 
     def __init__(self):
-        super(Canada, self).__init__(Canada.id, Canada.name)
+        super(Canada, self).__init__(Canada.id, Canada.name, Canada.shortname)
 
 
 class Spain(Country):
@@ -4154,7 +4154,7 @@ class Spain(Country):
     }
 
     def __init__(self):
-        super(Spain, self).__init__(Spain.id, Spain.name)
+        super(Spain, self).__init__(Spain.id, Spain.name, Spain.shortname)
 
 
 class TheNetherlands(Country):
@@ -4521,7 +4521,7 @@ class TheNetherlands(Country):
     }
 
     def __init__(self):
-        super(TheNetherlands, self).__init__(TheNetherlands.id, TheNetherlands.name)
+        super(TheNetherlands, self).__init__(TheNetherlands.id, TheNetherlands.name, TheNetherlands.shortname)
 
 
 class Belgium(Country):
@@ -4854,7 +4854,7 @@ class Belgium(Country):
     }
 
     def __init__(self):
-        super(Belgium, self).__init__(Belgium.id, Belgium.name)
+        super(Belgium, self).__init__(Belgium.id, Belgium.name, Belgium.shortname)
 
 
 class Norway(Country):
@@ -5173,7 +5173,7 @@ class Norway(Country):
     }
 
     def __init__(self):
-        super(Norway, self).__init__(Norway.id, Norway.name)
+        super(Norway, self).__init__(Norway.id, Norway.name, Norway.shortname)
 
 
 class Denmark(Country):
@@ -5487,7 +5487,7 @@ class Denmark(Country):
     }
 
     def __init__(self):
-        super(Denmark, self).__init__(Denmark.id, Denmark.name)
+        super(Denmark, self).__init__(Denmark.id, Denmark.name, Denmark.shortname)
 
 
 class Israel(Country):
@@ -5836,7 +5836,7 @@ class Israel(Country):
     }
 
     def __init__(self):
-        super(Israel, self).__init__(Israel.id, Israel.name)
+        super(Israel, self).__init__(Israel.id, Israel.name, Israel.shortname)
 
 
 class Georgia(Country):
@@ -6216,7 +6216,7 @@ class Georgia(Country):
     }
 
     def __init__(self):
-        super(Georgia, self).__init__(Georgia.id, Georgia.name)
+        super(Georgia, self).__init__(Georgia.id, Georgia.name, Georgia.shortname)
 
 
 class Insurgents(Country):
@@ -6457,7 +6457,7 @@ class Insurgents(Country):
     }
 
     def __init__(self):
-        super(Insurgents, self).__init__(Insurgents.id, Insurgents.name)
+        super(Insurgents, self).__init__(Insurgents.id, Insurgents.name, Insurgents.shortname)
 
 
 class Abkhazia(Country):
@@ -6726,7 +6726,7 @@ class Abkhazia(Country):
     }
 
     def __init__(self):
-        super(Abkhazia, self).__init__(Abkhazia.id, Abkhazia.name)
+        super(Abkhazia, self).__init__(Abkhazia.id, Abkhazia.name, Abkhazia.shortname)
 
 
 class SouthOssetia(Country):
@@ -6970,7 +6970,7 @@ class SouthOssetia(Country):
     }
 
     def __init__(self):
-        super(SouthOssetia, self).__init__(SouthOssetia.id, SouthOssetia.name)
+        super(SouthOssetia, self).__init__(SouthOssetia.id, SouthOssetia.name, SouthOssetia.shortname)
 
 
 class Italy(Country):
@@ -7300,7 +7300,7 @@ class Italy(Country):
     }
 
     def __init__(self):
-        super(Italy, self).__init__(Italy.id, Italy.name)
+        super(Italy, self).__init__(Italy.id, Italy.name, Italy.shortname)
 
 
 class Australia(Country):
@@ -7639,7 +7639,7 @@ class Australia(Country):
     }
 
     def __init__(self):
-        super(Australia, self).__init__(Australia.id, Australia.name)
+        super(Australia, self).__init__(Australia.id, Australia.name, Australia.shortname)
 
 
 class Switzerland(Country):
@@ -7932,7 +7932,7 @@ class Switzerland(Country):
     }
 
     def __init__(self):
-        super(Switzerland, self).__init__(Switzerland.id, Switzerland.name)
+        super(Switzerland, self).__init__(Switzerland.id, Switzerland.name, Switzerland.shortname)
 
 
 class Austria(Country):
@@ -8216,7 +8216,7 @@ class Austria(Country):
     }
 
     def __init__(self):
-        super(Austria, self).__init__(Austria.id, Austria.name)
+        super(Austria, self).__init__(Austria.id, Austria.name, Austria.shortname)
 
 
 class Belarus(Country):
@@ -8529,7 +8529,7 @@ class Belarus(Country):
     }
 
     def __init__(self):
-        super(Belarus, self).__init__(Belarus.id, Belarus.name)
+        super(Belarus, self).__init__(Belarus.id, Belarus.name, Belarus.shortname)
 
 
 class Bulgaria(Country):
@@ -8910,7 +8910,7 @@ class Bulgaria(Country):
     }
 
     def __init__(self):
-        super(Bulgaria, self).__init__(Bulgaria.id, Bulgaria.name)
+        super(Bulgaria, self).__init__(Bulgaria.id, Bulgaria.name, Bulgaria.shortname)
 
 
 class CzechRepublic(Country):
@@ -9251,7 +9251,7 @@ class CzechRepublic(Country):
     }
 
     def __init__(self):
-        super(CzechRepublic, self).__init__(CzechRepublic.id, CzechRepublic.name)
+        super(CzechRepublic, self).__init__(CzechRepublic.id, CzechRepublic.name, CzechRepublic.shortname)
 
 
 class China(Country):
@@ -9515,7 +9515,7 @@ class China(Country):
     }
 
     def __init__(self):
-        super(China, self).__init__(China.id, China.name)
+        super(China, self).__init__(China.id, China.name, China.shortname)
 
 
 class Croatia(Country):
@@ -9803,7 +9803,7 @@ class Croatia(Country):
     }
 
     def __init__(self):
-        super(Croatia, self).__init__(Croatia.id, Croatia.name)
+        super(Croatia, self).__init__(Croatia.id, Croatia.name, Croatia.shortname)
 
 
 class Egypt(Country):
@@ -10166,7 +10166,7 @@ class Egypt(Country):
     }
 
     def __init__(self):
-        super(Egypt, self).__init__(Egypt.id, Egypt.name)
+        super(Egypt, self).__init__(Egypt.id, Egypt.name, Egypt.shortname)
 
 
 class Finland(Country):
@@ -10519,7 +10519,7 @@ class Finland(Country):
     }
 
     def __init__(self):
-        super(Finland, self).__init__(Finland.id, Finland.name)
+        super(Finland, self).__init__(Finland.id, Finland.name, Finland.shortname)
 
 
 class Greece(Country):
@@ -10872,7 +10872,7 @@ class Greece(Country):
     }
 
     def __init__(self):
-        super(Greece, self).__init__(Greece.id, Greece.name)
+        super(Greece, self).__init__(Greece.id, Greece.name, Greece.shortname)
 
 
 class Hungary(Country):
@@ -11237,7 +11237,7 @@ class Hungary(Country):
     }
 
     def __init__(self):
-        super(Hungary, self).__init__(Hungary.id, Hungary.name)
+        super(Hungary, self).__init__(Hungary.id, Hungary.name, Hungary.shortname)
 
 
 class India(Country):
@@ -11579,7 +11579,7 @@ class India(Country):
     }
 
     def __init__(self):
-        super(India, self).__init__(India.id, India.name)
+        super(India, self).__init__(India.id, India.name, India.shortname)
 
 
 class Iran(Country):
@@ -11950,7 +11950,7 @@ class Iran(Country):
     }
 
     def __init__(self):
-        super(Iran, self).__init__(Iran.id, Iran.name)
+        super(Iran, self).__init__(Iran.id, Iran.name, Iran.shortname)
 
 
 class Iraq(Country):
@@ -12295,7 +12295,7 @@ class Iraq(Country):
     }
 
     def __init__(self):
-        super(Iraq, self).__init__(Iraq.id, Iraq.name)
+        super(Iraq, self).__init__(Iraq.id, Iraq.name, Iraq.shortname)
 
 
 class Japan(Country):
@@ -12642,7 +12642,7 @@ class Japan(Country):
     }
 
     def __init__(self):
-        super(Japan, self).__init__(Japan.id, Japan.name)
+        super(Japan, self).__init__(Japan.id, Japan.name, Japan.shortname)
 
 
 class Kazakhstan(Country):
@@ -13047,7 +13047,7 @@ class Kazakhstan(Country):
     }
 
     def __init__(self):
-        super(Kazakhstan, self).__init__(Kazakhstan.id, Kazakhstan.name)
+        super(Kazakhstan, self).__init__(Kazakhstan.id, Kazakhstan.name, Kazakhstan.shortname)
 
 
 class NorthKorea(Country):
@@ -13355,7 +13355,7 @@ class NorthKorea(Country):
     }
 
     def __init__(self):
-        super(NorthKorea, self).__init__(NorthKorea.id, NorthKorea.name)
+        super(NorthKorea, self).__init__(NorthKorea.id, NorthKorea.name, NorthKorea.shortname)
 
 
 class Pakistan(Country):
@@ -13672,7 +13672,7 @@ class Pakistan(Country):
     }
 
     def __init__(self):
-        super(Pakistan, self).__init__(Pakistan.id, Pakistan.name)
+        super(Pakistan, self).__init__(Pakistan.id, Pakistan.name, Pakistan.shortname)
 
 
 class Poland(Country):
@@ -14045,7 +14045,7 @@ class Poland(Country):
     }
 
     def __init__(self):
-        super(Poland, self).__init__(Poland.id, Poland.name)
+        super(Poland, self).__init__(Poland.id, Poland.name, Poland.shortname)
 
 
 class Romania(Country):
@@ -14409,7 +14409,7 @@ class Romania(Country):
     }
 
     def __init__(self):
-        super(Romania, self).__init__(Romania.id, Romania.name)
+        super(Romania, self).__init__(Romania.id, Romania.name, Romania.shortname)
 
 
 class SaudiArabia(Country):
@@ -14741,7 +14741,7 @@ class SaudiArabia(Country):
     }
 
     def __init__(self):
-        super(SaudiArabia, self).__init__(SaudiArabia.id, SaudiArabia.name)
+        super(SaudiArabia, self).__init__(SaudiArabia.id, SaudiArabia.name, SaudiArabia.shortname)
 
 
 class Serbia(Country):
@@ -15078,7 +15078,7 @@ class Serbia(Country):
     }
 
     def __init__(self):
-        super(Serbia, self).__init__(Serbia.id, Serbia.name)
+        super(Serbia, self).__init__(Serbia.id, Serbia.name, Serbia.shortname)
 
 
 class Slovakia(Country):
@@ -15401,7 +15401,7 @@ class Slovakia(Country):
     }
 
     def __init__(self):
-        super(Slovakia, self).__init__(Slovakia.id, Slovakia.name)
+        super(Slovakia, self).__init__(Slovakia.id, Slovakia.name, Slovakia.shortname)
 
 
 class SouthKorea(Country):
@@ -15722,7 +15722,7 @@ class SouthKorea(Country):
     }
 
     def __init__(self):
-        super(SouthKorea, self).__init__(SouthKorea.id, SouthKorea.name)
+        super(SouthKorea, self).__init__(SouthKorea.id, SouthKorea.name, SouthKorea.shortname)
 
 
 class Sweden(Country):
@@ -16016,7 +16016,7 @@ class Sweden(Country):
     }
 
     def __init__(self):
-        super(Sweden, self).__init__(Sweden.id, Sweden.name)
+        super(Sweden, self).__init__(Sweden.id, Sweden.name, Sweden.shortname)
 
 
 class Syria(Country):
@@ -16372,7 +16372,7 @@ class Syria(Country):
     }
 
     def __init__(self):
-        super(Syria, self).__init__(Syria.id, Syria.name)
+        super(Syria, self).__init__(Syria.id, Syria.name, Syria.shortname)
 
 
 class Yemen(Country):
@@ -16692,7 +16692,7 @@ class Yemen(Country):
     }
 
     def __init__(self):
-        super(Yemen, self).__init__(Yemen.id, Yemen.name)
+        super(Yemen, self).__init__(Yemen.id, Yemen.name, Yemen.shortname)
 
 
 class Vietnam(Country):
@@ -17024,7 +17024,7 @@ class Vietnam(Country):
     }
 
     def __init__(self):
-        super(Vietnam, self).__init__(Vietnam.id, Vietnam.name)
+        super(Vietnam, self).__init__(Vietnam.id, Vietnam.name, Vietnam.shortname)
 
 
 class Venezuela(Country):
@@ -17338,7 +17338,7 @@ class Venezuela(Country):
     }
 
     def __init__(self):
-        super(Venezuela, self).__init__(Venezuela.id, Venezuela.name)
+        super(Venezuela, self).__init__(Venezuela.id, Venezuela.name, Venezuela.shortname)
 
 
 class Tunisia(Country):
@@ -17618,7 +17618,7 @@ class Tunisia(Country):
     }
 
     def __init__(self):
-        super(Tunisia, self).__init__(Tunisia.id, Tunisia.name)
+        super(Tunisia, self).__init__(Tunisia.id, Tunisia.name, Tunisia.shortname)
 
 
 class Thailand(Country):
@@ -17920,7 +17920,7 @@ class Thailand(Country):
     }
 
     def __init__(self):
-        super(Thailand, self).__init__(Thailand.id, Thailand.name)
+        super(Thailand, self).__init__(Thailand.id, Thailand.name, Thailand.shortname)
 
 
 class Sudan(Country):
@@ -18224,7 +18224,7 @@ class Sudan(Country):
     }
 
     def __init__(self):
-        super(Sudan, self).__init__(Sudan.id, Sudan.name)
+        super(Sudan, self).__init__(Sudan.id, Sudan.name, Sudan.shortname)
 
 
 class Philippines(Country):
@@ -18501,7 +18501,7 @@ class Philippines(Country):
     }
 
     def __init__(self):
-        super(Philippines, self).__init__(Philippines.id, Philippines.name)
+        super(Philippines, self).__init__(Philippines.id, Philippines.name, Philippines.shortname)
 
 
 class Morocco(Country):
@@ -18815,7 +18815,7 @@ class Morocco(Country):
     }
 
     def __init__(self):
-        super(Morocco, self).__init__(Morocco.id, Morocco.name)
+        super(Morocco, self).__init__(Morocco.id, Morocco.name, Morocco.shortname)
 
 
 class Mexico(Country):
@@ -19107,7 +19107,7 @@ class Mexico(Country):
     }
 
     def __init__(self):
-        super(Mexico, self).__init__(Mexico.id, Mexico.name)
+        super(Mexico, self).__init__(Mexico.id, Mexico.name, Mexico.shortname)
 
 
 class Malaysia(Country):
@@ -19398,7 +19398,7 @@ class Malaysia(Country):
     }
 
     def __init__(self):
-        super(Malaysia, self).__init__(Malaysia.id, Malaysia.name)
+        super(Malaysia, self).__init__(Malaysia.id, Malaysia.name, Malaysia.shortname)
 
 
 class Libya(Country):
@@ -19714,7 +19714,7 @@ class Libya(Country):
     }
 
     def __init__(self):
-        super(Libya, self).__init__(Libya.id, Libya.name)
+        super(Libya, self).__init__(Libya.id, Libya.name, Libya.shortname)
 
 
 class Jordan(Country):
@@ -20025,7 +20025,7 @@ class Jordan(Country):
     }
 
     def __init__(self):
-        super(Jordan, self).__init__(Jordan.id, Jordan.name)
+        super(Jordan, self).__init__(Jordan.id, Jordan.name, Jordan.shortname)
 
 
 class Indonesia(Country):
@@ -20365,7 +20365,7 @@ class Indonesia(Country):
     }
 
     def __init__(self):
-        super(Indonesia, self).__init__(Indonesia.id, Indonesia.name)
+        super(Indonesia, self).__init__(Indonesia.id, Indonesia.name, Indonesia.shortname)
 
 
 class Honduras(Country):
@@ -20645,7 +20645,7 @@ class Honduras(Country):
     }
 
     def __init__(self):
-        super(Honduras, self).__init__(Honduras.id, Honduras.name)
+        super(Honduras, self).__init__(Honduras.id, Honduras.name, Honduras.shortname)
 
 
 class Ethiopia(Country):
@@ -20954,7 +20954,7 @@ class Ethiopia(Country):
     }
 
     def __init__(self):
-        super(Ethiopia, self).__init__(Ethiopia.id, Ethiopia.name)
+        super(Ethiopia, self).__init__(Ethiopia.id, Ethiopia.name, Ethiopia.shortname)
 
 
 class Chile(Country):
@@ -21271,7 +21271,7 @@ class Chile(Country):
     }
 
     def __init__(self):
-        super(Chile, self).__init__(Chile.id, Chile.name)
+        super(Chile, self).__init__(Chile.id, Chile.name, Chile.shortname)
 
 
 class Brazil(Country):
@@ -21576,7 +21576,7 @@ class Brazil(Country):
     }
 
     def __init__(self):
-        super(Brazil, self).__init__(Brazil.id, Brazil.name)
+        super(Brazil, self).__init__(Brazil.id, Brazil.name, Brazil.shortname)
 
 
 class Bahrain(Country):
@@ -21874,7 +21874,7 @@ class Bahrain(Country):
     }
 
     def __init__(self):
-        super(Bahrain, self).__init__(Bahrain.id, Bahrain.name)
+        super(Bahrain, self).__init__(Bahrain.id, Bahrain.name, Bahrain.shortname)
 
 
 class ThirdReich(Country):
@@ -22181,7 +22181,7 @@ class ThirdReich(Country):
     }
 
     def __init__(self):
-        super(ThirdReich, self).__init__(ThirdReich.id, ThirdReich.name)
+        super(ThirdReich, self).__init__(ThirdReich.id, ThirdReich.name, ThirdReich.shortname)
 
 
 class Yugoslavia(Country):
@@ -22418,7 +22418,7 @@ class Yugoslavia(Country):
     }
 
     def __init__(self):
-        super(Yugoslavia, self).__init__(Yugoslavia.id, Yugoslavia.name)
+        super(Yugoslavia, self).__init__(Yugoslavia.id, Yugoslavia.name, Yugoslavia.shortname)
 
 
 class USSR(Country):
@@ -22795,7 +22795,7 @@ class USSR(Country):
     }
 
     def __init__(self):
-        super(USSR, self).__init__(USSR.id, USSR.name)
+        super(USSR, self).__init__(USSR.id, USSR.name, USSR.shortname)
 
 
 class ItalianSocialRepublic(Country):
@@ -23100,7 +23100,7 @@ class ItalianSocialRepublic(Country):
     }
 
     def __init__(self):
-        super(ItalianSocialRepublic, self).__init__(ItalianSocialRepublic.id, ItalianSocialRepublic.name)
+        super(ItalianSocialRepublic, self).__init__(ItalianSocialRepublic.id, ItalianSocialRepublic.name, ItalianSocialRepublic.shortname)
 
 
 class Algeria(Country):
@@ -23516,7 +23516,7 @@ class Algeria(Country):
     }
 
     def __init__(self):
-        super(Algeria, self).__init__(Algeria.id, Algeria.name)
+        super(Algeria, self).__init__(Algeria.id, Algeria.name, Algeria.shortname)
 
 
 class Kuwait(Country):
@@ -23823,7 +23823,7 @@ class Kuwait(Country):
     }
 
     def __init__(self):
-        super(Kuwait, self).__init__(Kuwait.id, Kuwait.name)
+        super(Kuwait, self).__init__(Kuwait.id, Kuwait.name, Kuwait.shortname)
 
 
 class Qatar(Country):
@@ -24117,7 +24117,7 @@ class Qatar(Country):
     }
 
     def __init__(self):
-        super(Qatar, self).__init__(Qatar.id, Qatar.name)
+        super(Qatar, self).__init__(Qatar.id, Qatar.name, Qatar.shortname)
 
 
 class Oman(Country):
@@ -24436,7 +24436,7 @@ class Oman(Country):
     }
 
     def __init__(self):
-        super(Oman, self).__init__(Oman.id, Oman.name)
+        super(Oman, self).__init__(Oman.id, Oman.name, Oman.shortname)
 
 
 class UnitedArabEmirates(Country):
@@ -24764,7 +24764,7 @@ class UnitedArabEmirates(Country):
     }
 
     def __init__(self):
-        super(UnitedArabEmirates, self).__init__(UnitedArabEmirates.id, UnitedArabEmirates.name)
+        super(UnitedArabEmirates, self).__init__(UnitedArabEmirates.id, UnitedArabEmirates.name, UnitedArabEmirates.shortname)
 
 
 class SouthAfrica(Country):
@@ -25053,7 +25053,7 @@ class SouthAfrica(Country):
     }
 
     def __init__(self):
-        super(SouthAfrica, self).__init__(SouthAfrica.id, SouthAfrica.name)
+        super(SouthAfrica, self).__init__(SouthAfrica.id, SouthAfrica.name, SouthAfrica.shortname)
 
 
 class Cuba(Country):
@@ -25413,7 +25413,7 @@ class Cuba(Country):
     }
 
     def __init__(self):
-        super(Cuba, self).__init__(Cuba.id, Cuba.name)
+        super(Cuba, self).__init__(Cuba.id, Cuba.name, Cuba.shortname)
 
 
 class Portugal(Country):
@@ -25712,7 +25712,7 @@ class Portugal(Country):
     }
 
     def __init__(self):
-        super(Portugal, self).__init__(Portugal.id, Portugal.name)
+        super(Portugal, self).__init__(Portugal.id, Portugal.name, Portugal.shortname)
 
 
 class GDR(Country):
@@ -26045,7 +26045,7 @@ class GDR(Country):
     }
 
     def __init__(self):
-        super(GDR, self).__init__(GDR.id, GDR.name)
+        super(GDR, self).__init__(GDR.id, GDR.name, GDR.shortname)
 
 
 class Lebanon(Country):
@@ -26357,7 +26357,7 @@ class Lebanon(Country):
     }
 
     def __init__(self):
-        super(Lebanon, self).__init__(Lebanon.id, Lebanon.name)
+        super(Lebanon, self).__init__(Lebanon.id, Lebanon.name, Lebanon.shortname)
 
 
 class CombinedJointTaskForcesBlue(Country):
@@ -27095,7 +27095,7 @@ class CombinedJointTaskForcesBlue(Country):
     }
 
     def __init__(self):
-        super(CombinedJointTaskForcesBlue, self).__init__(CombinedJointTaskForcesBlue.id, CombinedJointTaskForcesBlue.name)
+        super(CombinedJointTaskForcesBlue, self).__init__(CombinedJointTaskForcesBlue.id, CombinedJointTaskForcesBlue.name, CombinedJointTaskForcesBlue.shortname)
 
 
 class CombinedJointTaskForcesRed(Country):
@@ -27833,7 +27833,7 @@ class CombinedJointTaskForcesRed(Country):
     }
 
     def __init__(self):
-        super(CombinedJointTaskForcesRed, self).__init__(CombinedJointTaskForcesRed.id, CombinedJointTaskForcesRed.name)
+        super(CombinedJointTaskForcesRed, self).__init__(CombinedJointTaskForcesRed.id, CombinedJointTaskForcesRed.name, CombinedJointTaskForcesRed.shortname)
 
 
 class UnitedNationsPeacekeepers(Country):
@@ -28571,7 +28571,7 @@ class UnitedNationsPeacekeepers(Country):
     }
 
     def __init__(self):
-        super(UnitedNationsPeacekeepers, self).__init__(UnitedNationsPeacekeepers.id, UnitedNationsPeacekeepers.name)
+        super(UnitedNationsPeacekeepers, self).__init__(UnitedNationsPeacekeepers.id, UnitedNationsPeacekeepers.name, UnitedNationsPeacekeepers.shortname)
 
 
 class Argentina(Country):
@@ -28867,7 +28867,7 @@ class Argentina(Country):
     }
 
     def __init__(self):
-        super(Argentina, self).__init__(Argentina.id, Argentina.name)
+        super(Argentina, self).__init__(Argentina.id, Argentina.name, Argentina.shortname)
 
 
 class Cyprus(Country):
@@ -29170,7 +29170,7 @@ class Cyprus(Country):
     }
 
     def __init__(self):
-        super(Cyprus, self).__init__(Cyprus.id, Cyprus.name)
+        super(Cyprus, self).__init__(Cyprus.id, Cyprus.name, Cyprus.shortname)
 
 
 class Slovenia(Country):
@@ -29472,7 +29472,7 @@ class Slovenia(Country):
     }
 
     def __init__(self):
-        super(Slovenia, self).__init__(Slovenia.id, Slovenia.name)
+        super(Slovenia, self).__init__(Slovenia.id, Slovenia.name, Slovenia.shortname)
 
 
 class Bolivia(Country):
@@ -29774,7 +29774,7 @@ class Bolivia(Country):
     }
 
     def __init__(self):
-        super(Bolivia, self).__init__(Bolivia.id, Bolivia.name)
+        super(Bolivia, self).__init__(Bolivia.id, Bolivia.name, Bolivia.shortname)
 
 
 class Ghana(Country):
@@ -30060,7 +30060,7 @@ class Ghana(Country):
     }
 
     def __init__(self):
-        super(Ghana, self).__init__(Ghana.id, Ghana.name)
+        super(Ghana, self).__init__(Ghana.id, Ghana.name, Ghana.shortname)
 
 
 class Nigeria(Country):
@@ -30359,7 +30359,7 @@ class Nigeria(Country):
     }
 
     def __init__(self):
-        super(Nigeria, self).__init__(Nigeria.id, Nigeria.name)
+        super(Nigeria, self).__init__(Nigeria.id, Nigeria.name, Nigeria.shortname)
 
 
 class Peru(Country):
@@ -30673,7 +30673,7 @@ class Peru(Country):
     }
 
     def __init__(self):
-        super(Peru, self).__init__(Peru.id, Peru.name)
+        super(Peru, self).__init__(Peru.id, Peru.name, Peru.shortname)
 
 
 country_dict = {

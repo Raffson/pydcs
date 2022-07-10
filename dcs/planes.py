@@ -5726,8 +5726,8 @@ class P_51D_30_NA(PlaneType):
         },
     }
 
-    livery_name = None
-    Liveries = None
+    livery_name = "P-51D"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         HVAR__UnGd_Rkt = (1, Weapons.HVAR__UnGd_Rkt)
@@ -5899,8 +5899,8 @@ class P_47D_30bl1(PlaneType):
                 Empty = 0
                 Water = 1
 
-    livery_name = None
-    Liveries = None
+    livery_name = "P-47D-30"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AN_M30A1___100lb_GP_Bomb_LD = (1, Weapons.AN_M30A1___100lb_GP_Bomb_LD)
@@ -5973,8 +5973,8 @@ class P_47D_40(PlaneType):
                 Empty = 0
                 Water = 1
 
-    livery_name = None
-    Liveries = None
+    livery_name = "P-47D-30"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AN_M30A1___100lb_GP_Bomb_LD = (1, Weapons.AN_M30A1___100lb_GP_Bomb_LD)
@@ -7027,8 +7027,8 @@ class A_10C_2(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = None
-    Liveries = None
+    livery_name = "A-10CII"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM = (1, Weapons.LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM)
@@ -12688,8 +12688,6 @@ class B_17G(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = None
-    Liveries = None
 
     class Pylon1:
         _12_AN_M64___500lb_GP_Bomb_LD = (1, Weapons._12_AN_M64___500lb_GP_Bomb_LD)
@@ -12716,8 +12714,6 @@ class Ju_88A4(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = None
-    Liveries = None
 
     class Pylon1:
         LTF_5b_Aerial_Torpedo = (1, Weapons.LTF_5b_Aerial_Torpedo)
@@ -12765,8 +12761,6 @@ class C_47(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = None
-    Liveries = None
 
     pylons: Set[int] = set()
 

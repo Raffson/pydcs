@@ -5,6 +5,7 @@ import sys
 from typing import Any, Dict, List, Optional, Set, Type, Union, TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from dcs.liveries_scanner import Livery
     from dcs.task import MainTask
 
 
@@ -37,7 +38,7 @@ class StaticType(UnitType):
 
 class LiveryOverwrites:
     map = {
-        "M-2000C.France": "AdA Chasse 2-5"
+        "M-2000C.FRA": "AdA Chasse 2-5"
     }
 
 
@@ -83,7 +84,8 @@ class FlyingType(UnitType):
     property_defaults: Optional[Dict[str, Any]] = None
 
     pylons: Set[int] = set()
-    Liveries: Optional[Dict[str, set[str] | None]] = None
+    livery_name: Optional[str] = None
+    Liveries: Set[Type["Livery"]] = set()
     # Dict from payload name to the DCS payload structure. None if not yet initialized.
     payloads: Optional[Dict[str, Dict[str, Any]]] = None
 
@@ -173,8 +175,7 @@ class FlyingType(UnitType):
         else:
             liveries = cls.Liveries
             if liveries is not None:
-                for x in liveries.__dict__:
-                    clas = liveries.__dict__[x]
-                    if clas and getattr(clas, "__name__", "") == country_name:
-                        return list(clas)[0].value
+                liveries = sorted(filter(lambda x: x.countries is None or country_name in x.countries, liveries))
+                if liveries:
+                    return liveries[0].name
         return ""
