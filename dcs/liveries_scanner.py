@@ -102,6 +102,8 @@ class Liveries:
 			i.e. name of the unit inside the Liveries folder, e.g. 'A-10CII'
 		"""
 		path_id = path.split('\\')[-1].replace(".zip", "")
+		if path_id == "placeholder":
+			return
 		livery_name = regex_group_extractor(r'name\s*=\s*"(.*)"', luacode, path_id)
 
 		regex = r'countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})'
