@@ -161,6 +161,8 @@ class Liveries:
 
 		:param path: A 'Liveries' path containing one or more units
 		"""
+		if not os.path.exists(path):
+			return
 		for unit in os.listdir(path):
 			# The unit's name for liveries is NOT case-sensitive
 			# thus convert 'unit' to upper/lower to make sure everything "merges properly"
