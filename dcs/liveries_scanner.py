@@ -173,6 +173,9 @@ class Liveries:
 				# Some custom mods put their cockpit liveries in the same directory,
 				# for the time being we don't want to load those...
 				continue
+			liveries_path = os.path.join(path, unit)
+			if not os.path.isdir(liveries_path):
+				continue
 			if unit not in Liveries.map:
 				Liveries.map[unit.upper()] = set()
 			liveries_path = os.path.join(path, unit)
