@@ -69,8 +69,9 @@ class Liveries:
 		"""
 		pass
 
-	def __getitem__(self, unit: str) -> Optional[Set[Livery]]:
-		return Liveries.map.get(unit)
+	def __getitem__(self, unit: str) -> Set[Livery]:
+		liveries = Liveries.map.get(unit)
+		return liveries if liveries is not None else set()
 
 	def __setitem__(self, unit: str, liveries: Set[Livery]) -> None:
 		if unit in Liveries.map:
@@ -117,7 +118,7 @@ class Liveries:
 		path_id = path.split('\\')[-1].replace(".zip", "")
 		if path_id == "placeholder":
 			return
-		livery_name = regex_group_extractor(r'^name\s*=\s*"(.*)\s*$"', luacode, path_id)
+		livery_name = regex_group_extractor(r'^name\s*=\s*"(.*)"\s*$', luacode, path_id)
 
 		regex = r'^countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*$'
 		countries = regex_group_extractor(regex, luacode)
@@ -271,10 +272,14 @@ class Liveries:
 
 
 if __name__ == "__main__":
-	Liveries.initialize()  # default initialization
 	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
+	# for some reason 'Liveries' in the current scope is a different object
+	from unittype import Liveries
 	f18 = FA_18C_hornet()
-	print(f18.livery_name, sorted(f18.Liveries))
+	print(f18.livery_name, id(Liveries.map), sorted(f18.Liveries))
+	Liveries.initialize()  # default initialization
+	f18 = FA_18C_hornet()
+	print(f18.livery_name, id(Liveries.map), sorted(f18.Liveries))
 	print(f18.default_livery("CAN"))
 	print(f18.default_livery("ISR"))
 	print(f18.default_livery("USA"))
@@ -282,7 +287,7 @@ if __name__ == "__main__":
 	f14 = F_14B()
 	print(f14.livery_name, sorted(f14.Liveries))
 	print(f14.default_livery("USA"))
-	print(f14.default_livery("ISR"))
+	print(f14.default_livery("IRN"))
 	print(f14.default_livery("GRC"))
 	print(f14.default_livery("POL"))
 

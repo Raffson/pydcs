@@ -262,13 +262,13 @@ local function export_aircraft(file, aircrafts, export_type, exportplane)
     -- generate export output
     file:write(
 [[# This file is generated from pydcs_export.lua
-from enum import Enum
 from typing import Any, Dict, List, Set
 
 from dcs.weapons_data import Weapons
 import dcs.task as task
 from dcs.unittype import FlyingType
 from dcs.liveries_scanner import Liveries
+
 
 ]])
     writeln(file, 'class '..export_type..'Type(FlyingType):')
@@ -432,12 +432,10 @@ from dcs.liveries_scanner import Liveries
         writeln(file, "")
         if plane.livery_entry ~= nil then
             local name = string.upper(plane.livery_entry)
-            writeln(file, '    livery_name = "'..name..'"')
-            writeln(file, '    Liveries = Liveries()[livery_name]  # from livery_entry')
+            writeln(file, '    livery_name = "'..name..'"  # from livery_entry')
         else if schemes ~= nil and #schemes > 0 and plane.type ~= nil then
             local name = string.upper(string.gsub(plane.type, '/', '_'))
-            writeln(file, '    livery_name = "'..name..'"')
-            writeln(file, '    Liveries = Liveries()[livery_name]  # from type')
+            writeln(file, '    livery_name = "'..name..'"  # from type')
         end end
 
         local pylons = {}
