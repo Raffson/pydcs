@@ -70,6 +70,7 @@ class Liveries:
 		if len(Liveries.map) == 0:
 			Liveries.scan_dcs_installation()
 			Liveries.scan_custom_liveries()
+			Liveries.scan_custom_liveries(beta=True)
 
 	def __getitem__(self, unit: str) -> Optional[Set[Livery]]:
 		return Liveries.map.get(unit)
@@ -215,11 +216,14 @@ class Liveries:
 		Liveries.scan_liveries(path3)
 
 	@staticmethod
-	def scan_custom_liveries():
+	def scan_custom_liveries(beta: bool = False):
 		"""
 		Scans all custom liveries & liveries of aircraft mods.
 		"""
 		root = get_dcs_saved_games_directory()
+
+		if beta:
+			root = root + ".openbeta"
 
 		path1 = os.path.join(root, "Liveries")
 		path2 = os.path.join(root, "Mods", "aircraft")
