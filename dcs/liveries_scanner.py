@@ -65,10 +65,9 @@ class Liveries:
 
 	def __init__(self) -> None:
 		"""
-		Initialization happens upon import.
+		Constructor does nothing, you must initialize manually call 'Liveries.initialize'.
 		"""
-		if len(Liveries.map) == 0:
-			Liveries.initialize()
+		pass
 
 	def __getitem__(self, unit: str) -> Optional[Set[Livery]]:
 		return Liveries.map.get(unit)
@@ -272,7 +271,7 @@ class Liveries:
 
 
 if __name__ == "__main__":
-	Liveries()  # default initialization
+	Liveries.initialize()  # default initialization
 	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
 	f18 = FA_18C_hornet()
 	print(f18.livery_name, sorted(f18.Liveries))
