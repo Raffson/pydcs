@@ -271,10 +271,8 @@ class Liveries:
 		Liveries.scan_mods_path(path2)
 
 
-Liveries()  # initialization
-
-
 if __name__ == "__main__":
+	Liveries()  # default initialization
 	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
 	f18 = FA_18C_hornet()
 	print(f18.livery_name, sorted(f18.Liveries))
