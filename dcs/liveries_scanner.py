@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 import zipfile
@@ -68,6 +69,7 @@ class Liveries:
 		Initialization happens upon import.
 		"""
 		if len(Liveries.map) == 0:
+			logging.info("LIVERY SCANNER: About to scan...")
 			Liveries.scan_dcs_installation()
 			Liveries.scan_custom_liveries()
 
@@ -164,6 +166,7 @@ class Liveries:
 		:param path: A 'Liveries' path containing one or more units
 		"""
 		if not os.path.exists(path):
+			logging.warning(f"LIVERY SCANNER: path does not exist ({path})")
 			return
 		for unit in os.listdir(path):
 			# The unit's name for liveries is NOT case-sensitive
@@ -175,6 +178,7 @@ class Liveries:
 				continue
 			liveries_path = os.path.join(path, unit)
 			if not os.path.isdir(liveries_path):
+				logging.warning(f"LIVERY SCANNER: invalid liveries path ({liveries_path})")
 				continue
 			if unit not in Liveries.map:
 				Liveries.map[unit.upper()] = set()
@@ -198,6 +202,10 @@ class Liveries:
 				liveries_path = os.path.join(path, unit, "Liveries")
 				if os.path.exists(liveries_path):
 					Liveries.scan_liveries(liveries_path)
+				else:
+					logging.warning(f"LIVERY SCANNER: could not find liveries for {unit} ({liveries_path})")
+		else:
+			logging.warning(f"LIVERY SCANNER: could not find Mod path ({path})")
 
 	@staticmethod
 	def scan_dcs_installation():
@@ -205,6 +213,8 @@ class Liveries:
 		Scans all liveries in DCS' installation folder
 		"""
 		root = get_dcs_install_directory()
+
+		logging.info(f"LIVERY SCANNER: DCS installation @ {root}")
 
 		path1 = os.path.join(root, "CoreMods", "aircraft")
 		path2 = os.path.join(root, "CoreMods", "WWII Units")
@@ -220,6 +230,8 @@ class Liveries:
 		Scans all custom liveries & liveries of aircraft mods.
 		"""
 		root = get_dcs_saved_games_directory()
+
+		logging.info(f"LIVERY SCANNER: DCS Saved Games @ {root}")
 
 		path1 = os.path.join(root, "Liveries")
 		path2 = os.path.join(root, "Mods", "aircraft")
