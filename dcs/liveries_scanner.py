@@ -194,11 +194,26 @@ class Liveries:
 
 		:param path: A path to a "Mod", e.g. "CoreMods", custom "Mods" in saved games, etc.
 		"""
-		if os.path.exists(path):
-			for unit in os.listdir(path):
-				liveries_path = os.path.join(path, unit, "Liveries")
-				if os.path.exists(liveries_path):
-					Liveries.scan_liveries(liveries_path)
+		if not os.path.exists(path):
+			return
+		for unit in os.listdir(path):
+			liveries_path = os.path.join(path, unit, "Liveries")
+			if os.path.exists(liveries_path):
+				Liveries.scan_liveries(liveries_path)
+
+	@staticmethod
+	def scan_campaign_liveries(path: str) -> None:
+		"""
+		Scans all extra liveries from campaigns.
+
+		:param path: The path to 'DCS-installation/Mods/campaigns'.
+		"""
+		if not os.path.exists(path):
+			return
+		for campaign in os.listdir(path):
+			liveries_path = os.path.join(path, campaign, "Liveries")
+			if os.path.exists(liveries_path):
+				Liveries.scan_liveries(liveries_path)
 
 	@staticmethod
 	def scan_dcs_installation():
@@ -210,10 +225,14 @@ class Liveries:
 		path1 = os.path.join(root, "CoreMods", "aircraft")
 		path2 = os.path.join(root, "CoreMods", "WWII Units")
 		path3 = os.path.join(root, "Bazar", "Liveries")
+		path4 = os.path.join(root, "Mods", "campaigns")
+		path5 = os.path.join(root, "CoreMods", "tech")
 
 		Liveries.scan_mods_path(path1)
 		Liveries.scan_mods_path(path2)
 		Liveries.scan_liveries(path3)
+		Liveries.scan_campaign_liveries(path4)
+		Liveries.scan_mods_path(path5)
 
 	@staticmethod
 	def scan_custom_liveries(beta: bool = False):
@@ -222,7 +241,7 @@ class Liveries:
 		"""
 		root = get_dcs_saved_games_directory()
 
-		if beta:
+		if beta:  # TODO: this is not good! A better attempt is needed to determine saved games...
 			root = root + ".openbeta"
 
 		path1 = os.path.join(root, "Liveries")
