@@ -68,9 +68,7 @@ class Liveries:
 		Initialization happens upon import.
 		"""
 		if len(Liveries.map) == 0:
-			Liveries.scan_dcs_installation()
-			Liveries.scan_custom_liveries()
-			Liveries.scan_custom_liveries(beta=True)
+			Liveries.initialize()
 
 	def __getitem__(self, unit: str) -> Optional[Set[Livery]]:
 		return Liveries.map.get(unit)
@@ -86,6 +84,21 @@ class Liveries:
 
 	def __iter__(self) -> Iterator[str]:
 		return Liveries.map.__iter__()
+
+	@staticmethod
+	def initialize(install: str = "", saved_games: str = "") -> None:
+		"""
+		Initializes the Liveries map given the root install directory for DCS
+		and the path to its Saved Games folder.
+
+		:param install: Path to DCS' installation folder,
+			if empty PyDCS will attempt to determine this.
+		:param saved_games: Path to the Saved Games folder,
+			if empty PyDCS will attempt to determine this.
+		"""
+		Liveries.map.clear()
+		Liveries.scan_dcs_installation(install)
+		Liveries.scan_custom_liveries(saved_games)
 
 	@staticmethod
 	def scan_lua_code(luacode: str, path: str, unit: str) -> None:
@@ -216,11 +229,16 @@ class Liveries:
 				Liveries.scan_liveries(liveries_path)
 
 	@staticmethod
-	def scan_dcs_installation():
+	def scan_dcs_installation(install: str = ""):
 		"""
 		Scans all liveries in DCS' installation folder
+
+		:param install: Path to DCS' installation folder,
+			if an empty string or invalid path was given PyDCS will attempt to determine this.
 		"""
-		root = get_dcs_install_directory()
+		root = install
+		if root == "" or not os.path.isdir(root):
+			root = get_dcs_install_directory()
 
 		path1 = os.path.join(root, "CoreMods", "aircraft")
 		path2 = os.path.join(root, "CoreMods", "WWII Units")
@@ -235,14 +253,16 @@ class Liveries:
 		Liveries.scan_mods_path(path5)
 
 	@staticmethod
-	def scan_custom_liveries(beta: bool = False):
+	def scan_custom_liveries(saved_games: str = ""):
 		"""
 		Scans all custom liveries & liveries of aircraft mods.
-		"""
-		root = get_dcs_saved_games_directory()
 
-		if beta:  # TODO: this is not good! A better attempt is needed to determine saved games...
-			root = root + ".openbeta"
+		:param saved_games: Path to Saved Games folder,
+			if an empty string or invalid path was given PyDCS will attempt to determine this.
+		"""
+		root = saved_games
+		if root == "" or not os.path.isdir(root):
+			root = get_dcs_saved_games_directory()
 
 		path1 = os.path.join(root, "Liveries")
 		path2 = os.path.join(root, "Mods", "aircraft")
