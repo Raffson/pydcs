@@ -7,7 +7,7 @@ from typing import Optional, Dict, Iterator, Set
 
 
 def regex_group_extractor(regex: str, text: str, fallback=None):
-	match = re.search(regex, text)
+	match = re.search(regex, text, re.MULTILINE)
 	if match is not None:
 		return match.group(1)
 	else:
@@ -107,7 +107,7 @@ class Liveries:
 			return
 		livery_name = regex_group_extractor(r'name\s*=\s*"(.*)"', luacode, path_id)
 
-		regex = r'countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})'
+		regex = r'^countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*$'
 		countries = regex_group_extractor(regex, luacode)
 		if countries is not None:
 			exec(f"country_list = {countries}")
@@ -281,4 +281,4 @@ if __name__ == "__main__":
 	# for u in skins:
 	# 	print(u)
 	# 	for liv in sorted(skins[u]):
-	# 		print("\t", liv)
+	# 		print("\t", liv, liv.countries)
