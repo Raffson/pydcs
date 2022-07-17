@@ -65,9 +65,11 @@ class Liveries:
 
 	def __init__(self) -> None:
 		"""
-		Constructor does nothing, you must initialize manually call 'Liveries.initialize'.
+		Constructor only attempts to initialize if 'map' is empty.
+		You can also initialize manually by calling 'Liveries.initialize'.
 		"""
-		pass
+		if len(Liveries.map) == 0:
+			Liveries.initialize()
 
 	def __getitem__(self, unit: str) -> Set[Livery]:
 		liveries = Liveries.map.get(unit)
@@ -272,13 +274,10 @@ class Liveries:
 
 
 if __name__ == "__main__":
-	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2, Liveries
+	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
 	# for some reason 'Liveries' in the current scope is a different object
 	f18 = FA_18C_hornet()
-	print(f18.livery_name, id(Liveries.map), sorted(f18.Liveries))
-	Liveries.initialize()  # default initialization
-	f18 = FA_18C_hornet()
-	print(f18.livery_name, id(Liveries.map), sorted(f18.Liveries))
+	print(f18.livery_name, sorted(f18.Liveries))
 	print(f18.default_livery("CAN"))
 	print(f18.default_livery("ISR"))
 	print(f18.default_livery("USA"))
