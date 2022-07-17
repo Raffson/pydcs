@@ -120,15 +120,15 @@ class Liveries:
 		path_id = path.split('\\')[-1].replace(".zip", "")
 		if path_id == "placeholder":
 			return
-		livery_name = regex_group_extractor(r'^name\s*=\s*"(.*)"\s*$', luacode, path_id)
+		livery_name = regex_group_extractor(r'^name\s*=\s*"(.*)"\s*(?:--.*)$', luacode, path_id)
 
-		regex = r'^countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*$'
+		regex = r'^countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*(?:--.*)$'
 		countries = regex_group_extractor(regex, luacode)
 		if countries is not None:
 			exec(f"country_list = {countries}")
 			countries = set(filter(lambda x: x != "", locals()['country_list']))
 
-		order = regex_group_extractor(r'^order\s*=\s*(-?[0-9]+)\s*$', luacode, 0)
+		order = regex_group_extractor(r'^order\s*=\s*(-?[0-9]+)\s*(?:--.*)$', luacode, 0)
 		if not isinstance(order, int):
 			try:
 				order = int(order)
