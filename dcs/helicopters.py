@@ -1,11 +1,11 @@
 # This file is generated from pydcs_export.lua
-from enum import Enum
 from typing import Any, Dict, List, Set
 
 from dcs.weapons_data import Weapons
 import dcs.task as task
 from dcs.unittype import FlyingType
 from dcs.liveries_scanner import Liveries
+
 
 class HelicopterType(FlyingType):
     helicopter = True
@@ -63,8 +63,8 @@ class Ka_50(HelicopterType):
         },
     }
 
-    livery_name = "KA-50"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "KA-50"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         B_8V20A_CM = (1, Weapons.B_8V20A_CM)
@@ -141,8 +141,8 @@ class Mi_24V(HelicopterType):
     chaff_charge_size = 0
     flare_charge_size = 1
 
-    livery_name = "MI-24V"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "MI-24V"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         _2_x_9M114_Shturm_V__AT_6_Spiral____ATGM__SACLOS__HEAT = (1, Weapons._2_x_9M114_Shturm_V__AT_6_Spiral____ATGM__SACLOS__HEAT)
@@ -315,8 +315,8 @@ class Mi_8MT(HelicopterType):
         class NS430allow:
             id = "NS430allow"
 
-    livery_name = "MI-8MT"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "MI-8MT"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         B_8V20A_CM = (1, Weapons.B_8V20A_CM)
@@ -457,8 +457,8 @@ class Mi_26(HelicopterType):
     chaff_charge_size = 0
     flare_charge_size = 1
 
-    livery_name = "MI-26"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "MI-26"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -474,8 +474,8 @@ class Ka_27(HelicopterType):
     fuel_max = 2616
     max_speed = 290
 
-    livery_name = "KA-27"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "KA-27"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -496,8 +496,8 @@ class UH_60A(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "UH-60A"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "UH-60A"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -519,8 +519,8 @@ class CH_53E(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "CH-53E"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "CH-53E"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -542,8 +542,8 @@ class CH_47D(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "CH-47D"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "CH-47D"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -565,8 +565,8 @@ class SH_3W(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SH-3W"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SH-3W"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 
@@ -587,8 +587,8 @@ class AH_64A(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "AH-64A"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "AH-64A"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         LAU_61_pod___19_x_2_75_Hydra__UnGd_Rkts_M151__HE = (1, Weapons.LAU_61_pod___19_x_2_75_Hydra__UnGd_Rkts_M151__HE)
@@ -627,8 +627,8 @@ class AH_64D(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "AH-64D"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "AH-64D"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         M299___4_x_AGM_114K_Hellfire = (1, Weapons.M299___4_x_AGM_114K_Hellfire)
@@ -691,8 +691,8 @@ class AH_1W(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "AH-1W"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "AH-1W"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         M299___4_x_AGM_114K_Hellfire = (1, Weapons.M299___4_x_AGM_114K_Hellfire)
@@ -737,8 +737,8 @@ class SH_60B(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SH-60B"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SH-60B"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         AGM_119B_Penguin_ASM = (1, Weapons.AGM_119B_Penguin_ASM)
@@ -822,8 +822,8 @@ class UH_1H(HelicopterType):
                 Ask_Always = -1
                 Equally_Responsible = -2
 
-    livery_name = "UH-1H"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "UH-1H"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         M134_L = (1, Weapons.M134_L)
@@ -878,8 +878,8 @@ class Mi_28N(HelicopterType):
     chaff_charge_size = 0
     flare_charge_size = 1
 
-    livery_name = "MI-28N"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "MI-28N"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         B_8V20A_CM = (1, Weapons.B_8V20A_CM)
@@ -1162,8 +1162,8 @@ class AH_64D_BLK_II(HelicopterType):
         class CpgNVG:
             id = "CpgNVG"
 
-    livery_name = "AH-64D_BLK_II"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "AH-64D_BLK_II"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         M261_MK151 = (1, Weapons.M261_MK151)
@@ -1348,8 +1348,8 @@ class Mi_24P(HelicopterType):
         class R60equipment:
             id = "R60equipment"
 
-    livery_name = "MI-24P"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "MI-24P"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         _2_x_9M114_Shturm_V__AT_6_Spiral____ATGM__SACLOS__HEAT = (1, Weapons._2_x_9M114_Shturm_V__AT_6_Spiral____ATGM__SACLOS__HEAT)
@@ -1499,8 +1499,8 @@ class SA342M(HelicopterType):
         class NS430allow:
             id = "NS430allow"
 
-    livery_name = "SA342M"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SA342M"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         HOT3_ = (1, Weapons.HOT3_)
@@ -1573,8 +1573,8 @@ class SA342L(HelicopterType):
         class SA342RemoveDoors:
             id = "SA342RemoveDoors"
 
-    livery_name = "SA342L"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SA342L"  # from type
+    Liveries = Liveries()[livery_name]
 #ERRR {GIAT_M621G}
 
     class Pylon2:
@@ -1645,8 +1645,8 @@ class SA342Mistral(HelicopterType):
         class NS430allow:
             id = "NS430allow"
 
-    livery_name = "SA342MISTRAL"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SA342MISTRAL"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         Mistral_ = (1, Weapons.Mistral_)
@@ -1715,8 +1715,8 @@ class SA342Minigun(HelicopterType):
         class NS430allow:
             id = "NS430allow"
 
-    livery_name = "SA342MINIGUN"
-    Liveries = Liveries()[livery_name]  # from type
+    livery_name = "SA342MINIGUN"  # from type
+    Liveries = Liveries()[livery_name]
 #ERRR {MINIGUN}
 
     class Pylon5:
