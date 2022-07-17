@@ -25,7 +25,8 @@ class Tornado_GR4(PlaneType):
     flare_charge_size = 2
     eplrs = True
 
-    livery_name = "TORNADO GR4"  # from type
+    livery_name = "TORNADO GR4"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         BOZ_107___Countermeasure_Dispenser = (1, Weapons.BOZ_107___Countermeasure_Dispenser)
@@ -106,7 +107,8 @@ class Tornado_IDS(PlaneType):
     flare_charge_size = 2
     eplrs = True
 
-    livery_name = "TORNADO IDS"  # from type
+    livery_name = "TORNADO IDS"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         BOZ_107___Countermeasure_Dispenser = (1, Weapons.BOZ_107___Countermeasure_Dispenser)
@@ -182,7 +184,8 @@ class F_A_18A(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "F_A-18A"  # from type
+    livery_name = "F_A-18A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AN_ASQ_T50_TCTS_Pod___ACMI_Pod = (1, Weapons.AN_ASQ_T50_TCTS_Pod___ACMI_Pod)
@@ -352,7 +355,8 @@ class F_A_18C(PlaneType):
         ]
     }
 
-    livery_name = "F_A-18C"  # from type
+    livery_name = "F_A-18C"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9L_Sidewinder_IR_AAM = (1, Weapons.AIM_9L_Sidewinder_IR_AAM)
@@ -555,7 +559,8 @@ class F_14A(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "F-14A"  # from type
+    livery_name = "F-14A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AN_ASQ_T50_TCTS_Pod___ACMI_Pod = (1, Weapons.AN_ASQ_T50_TCTS_Pod___ACMI_Pod)
@@ -623,7 +628,8 @@ class Tu_22M3(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "TU-22M3"  # from type
+    livery_name = "TU-22M3"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Kh_22__AS_4_Kitchen____1000kg__AShM__IN__Act_Pas_Rdr = (1, Weapons.Kh_22__AS_4_Kitchen____1000kg__AShM__IN__Act_Pas_Rdr)
@@ -664,7 +670,8 @@ class F_4E(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "F-4E"  # from type
+    livery_name = "F-4E"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         GBU_10___2000lb_Laser_Guided_Bomb = (1, Weapons.GBU_10___2000lb_Laser_Guided_Bomb)
@@ -776,7 +783,8 @@ class B_52H(PlaneType):
         ]
     }
 
-    livery_name = "B-52H"  # from type
+    livery_name = "B-52H"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         MER12_with_12_x_Mk_82___500lb_GP_Bombs_LD = (1, Weapons.MER12_with_12_x_Mk_82___500lb_GP_Bombs_LD)
@@ -816,7 +824,8 @@ class MiG_27K(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "MIG-27K"  # from type
+    livery_name = "MIG-27K"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon2:
         Kh_25ML__AS_10_Karen____300kg__ASM__Semi_Act_Laser_ = (2, Weapons.Kh_25ML__AS_10_Karen____300kg__ASM__Semi_Act_Laser_)
@@ -915,7 +924,8 @@ class Su_27(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
 
-    livery_name = "SU-27"  # from type
+    livery_name = "SU-27"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_73__AA_11_Archer____Infra_Red = (1, Weapons.R_73__AA_11_Archer____Infra_Red)
@@ -1147,7 +1157,8 @@ class MiG_23MLD(PlaneType):
     flare_charge_size = 1
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "MIG-23MLD"  # from type
+    livery_name = "MIG-23MLD"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon2:
         R_24R__AA_7_Apex_SA____Semi_Act_Rdr = (2, Weapons.R_24R__AA_7_Apex_SA____Semi_Act_Rdr)
@@ -1241,7 +1252,8 @@ class Su_25(PlaneType):
     flare_charge_size = 1
     radio_frequency = 124
 
-    livery_name = "SU-25"  # from type
+    livery_name = "SU-25"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -1503,7 +1515,8 @@ class Su_25TM(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SU-25TM"  # from type
+    livery_name = "SU-25TM"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -1798,7 +1811,8 @@ class Su_25T(PlaneType):
     flare_charge_size = 1
     radio_frequency = 124
 
-    livery_name = "SU-25T"  # from type
+    livery_name = "SU-25T"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -2086,7 +2100,8 @@ class Su_33(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 124
 
-    livery_name = "SU-33"  # from type
+    livery_name = "SU-33"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_73__AA_11_Archer____Infra_Red = (1, Weapons.R_73__AA_11_Archer____Infra_Red)
@@ -2374,7 +2389,8 @@ class MiG_25PD(PlaneType):
     flare_charge_size = 1
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "MIG-25PD"  # from type
+    livery_name = "MIG-25PD"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_40R__AA_6_Acrid____Semi_Act_Rdr = (1, Weapons.R_40R__AA_6_Acrid____Semi_Act_Rdr)
@@ -2408,7 +2424,8 @@ class MiG_25RBT(PlaneType):
     fuel_max = 15245
     max_speed = 3000
 
-    livery_name = "MIG-25RBT"  # from type
+    livery_name = "MIG-25RBT"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         APU_60_1M_with_R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.APU_60_1M_with_R_60M__AA_8_Aphid____Infra_Red)
@@ -2484,7 +2501,8 @@ class Su_30(PlaneType):
     flare_charge_size = 1
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "SU-30"  # from type
+    livery_name = "SU-30"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_73__AA_11_Archer____Infra_Red = (1, Weapons.R_73__AA_11_Archer____Infra_Red)
@@ -2690,7 +2708,8 @@ class Su_17M4(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SU-17M4"  # from type
+    livery_name = "SU-17M4"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         B_8M1___20_S_8OFP2 = (1, Weapons.B_8M1___20_S_8OFP2)
@@ -2878,7 +2897,8 @@ class MiG_31(PlaneType):
     max_speed = 3000
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "MIG-31"  # from type
+    livery_name = "MIG-31"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_40R__AA_6_Acrid____Semi_Act_Rdr = (1, Weapons.R_40R__AA_6_Acrid____Semi_Act_Rdr)
@@ -2922,7 +2942,8 @@ class Tu_95MS(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "TU-95MS"  # from type
+    livery_name = "TU-95MS"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         _6_x_Kh_65__AS_15B_Kent____1250kg__ASM__IN__MCC = (1, Weapons._6_x_Kh_65__AS_15B_Kent____1250kg__ASM__IN__MCC)
@@ -2946,7 +2967,8 @@ class Su_24M(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SU-24M"  # from type
+    livery_name = "SU-24M"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         APU_60_1M_with_R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.APU_60_1M_with_R_60M__AA_8_Aphid____Infra_Red)
@@ -3134,7 +3156,8 @@ class Su_24MR(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SU-24MR"  # from type
+    livery_name = "SU-24MR"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         APU_60_2M_with_2_x_R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.APU_60_2M_with_2_x_R_60M__AA_8_Aphid____Infra_Red)
@@ -3173,7 +3196,8 @@ class Tu_160(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "TU-160"  # from type
+    livery_name = "TU-160"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         _6_x_Kh_65__AS_15B_Kent____1250kg__ASM__IN__MCC = (1, Weapons._6_x_Kh_65__AS_15B_Kent____1250kg__ASM__IN__MCC)
@@ -3195,7 +3219,8 @@ class F_117A(PlaneType):
     fuel_max = 8255
     max_speed = 1000
 
-    livery_name = "F-117A"  # from type
+    livery_name = "F-117A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         GBU_10___2000lb_Laser_Guided_Bomb = (1, Weapons.GBU_10___2000lb_Laser_Guided_Bomb)
@@ -3236,7 +3261,8 @@ class B_1B(PlaneType):
         ]
     }
 
-    livery_name = "B-1B"  # from type
+    livery_name = "B-1B"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         MK_82_28 = (1, Weapons.MK_82_28)
@@ -3289,7 +3315,8 @@ class S_3B(PlaneType):
     flare_charge_size = 1
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "S-3B"  # from type
+    livery_name = "S-3B"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         BRU_42_with_3_x_Mk_82___500lb_GP_Bombs_LD = (1, Weapons.BRU_42_with_3_x_Mk_82___500lb_GP_Bombs_LD)
@@ -3355,7 +3382,8 @@ class S_3B_Tanker(PlaneType):
     tacan = True
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "S-3B TANKER"  # from type
+    livery_name = "S-3B TANKER"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -3378,7 +3406,8 @@ class Mirage_2000_5(PlaneType):
     eplrs = True
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "MIRAGE 2000-5"  # from type
+    livery_name = "MIRAGE 2000-5"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R550_Magic_2_IR_AAM = (1, Weapons.R550_Magic_2_IR_AAM)
@@ -3440,7 +3469,8 @@ class F_15C(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 124
 
-    livery_name = "F-15C"  # from type
+    livery_name = "F-15C"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -3566,7 +3596,8 @@ class F_15E(PlaneType):
         ]
     }
 
-    livery_name = "F-15E"  # from type
+    livery_name = "F-15E"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -3838,7 +3869,8 @@ class MiG_29A(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 124
 
-    livery_name = "MIG-29A"  # from type
+    livery_name = "MIG-29A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -4007,7 +4039,8 @@ class MiG_29G(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 124
 
-    livery_name = "MIG-29G"  # from type
+    livery_name = "MIG-29G"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -4176,7 +4209,8 @@ class MiG_29S(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 124
 
-    livery_name = "MIG-29S"  # from type
+    livery_name = "MIG-29S"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_60M__AA_8_Aphid____Infra_Red = (1, Weapons.R_60M__AA_8_Aphid____Infra_Red)
@@ -4349,7 +4383,8 @@ class Tu_142(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "TU-142"  # from type
+    livery_name = "TU-142"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         _6_x_Kh_35__AS_20_Kayak____520kg__AShM__IN__Act_Rdr = (1, Weapons._6_x_Kh_35__AS_20_Kayak____520kg__AShM__IN__Act_Rdr)
@@ -4374,7 +4409,8 @@ class C_130(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 2
 
-    livery_name = "C-130"  # from type
+    livery_name = "C-130"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4396,7 +4432,8 @@ class An_26B(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "AN-26B"  # from type
+    livery_name = "AN-26B"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4418,7 +4455,8 @@ class An_30M(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "AN-30M"  # from type
+    livery_name = "AN-30M"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4440,7 +4478,8 @@ class C_17A(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 2
 
-    livery_name = "C-17A"  # from type
+    livery_name = "C-17A"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4463,7 +4502,8 @@ class A_50(PlaneType):
     flare_charge_size = 1
     category = "AWACS"  #{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}
 
-    livery_name = "A-50"  # from type
+    livery_name = "A-50"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4487,7 +4527,8 @@ class E_3A(PlaneType):
     eplrs = True
     category = "AWACS"  #{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}
 
-    livery_name = "E-3A"  # from type
+    livery_name = "E-3A"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4510,7 +4551,8 @@ class IL_78M(PlaneType):
     flare_charge_size = 1
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "IL-78M"  # from type
+    livery_name = "IL-78M"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4534,7 +4576,8 @@ class E_2C(PlaneType):
     eplrs = True
     category = "AWACS"  #{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}
 
-    livery_name = "E-2C"  # from type
+    livery_name = "E-2C"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4556,7 +4599,8 @@ class IL_76MD(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "IL-76MD"  # from type
+    livery_name = "IL-76MD"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -4596,7 +4640,8 @@ class F_16C_bl_50(PlaneType):
         ]
     }
 
-    livery_name = "F-16C BL.50"  # from type
+    livery_name = "F-16C BL.50"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -4795,7 +4840,8 @@ class F_16C_bl_52d(PlaneType):
         ]
     }
 
-    livery_name = "F-16C BL.52D"  # from type
+    livery_name = "F-16C BL.52D"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -4982,7 +5028,8 @@ class F_16A(PlaneType):
     flare_charge_size = 2
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "F-16A"  # from type
+    livery_name = "F-16A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -5100,7 +5147,8 @@ class F_16A_MLU(PlaneType):
     eplrs = True
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
 
-    livery_name = "F-16A MLU"  # from type
+    livery_name = "F-16A MLU"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_120B_AMRAAM___Active_Rdr_AAM = (1, Weapons.AIM_120B_AMRAAM___Active_Rdr_AAM)
@@ -5251,7 +5299,8 @@ class RQ_1A_Predator(PlaneType):
     eplrs = True
     radio_frequency = 127.5
 
-    livery_name = "RQ-1A PREDATOR"  # from type
+    livery_name = "RQ-1A PREDATOR"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AGM_114K = (1, Weapons.AGM_114K)
@@ -5274,7 +5323,8 @@ class Yak_40(PlaneType):
     fuel_max = 3080
     max_speed = 570
 
-    livery_name = "YAK-40"  # from type
+    livery_name = "YAK-40"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -5293,7 +5343,8 @@ class KC_135(PlaneType):
     tacan = True
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "KC-135"  # from type
+    livery_name = "KC-135"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -5338,7 +5389,8 @@ class FW_190D9(PlaneType):
                 MW_50_Mix = 1
                 B_4_Gasoline = 2
 
-    livery_name = "FW-190D9"  # from type
+    livery_name = "FW-190D9"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         FW109_FUEL_TANK = (1, Weapons.FW109_FUEL_TANK)
@@ -5395,7 +5447,8 @@ class FW_190A8(PlaneType):
                 Empty = 0
                 Additional_fuel = 2
 
-    livery_name = "FW-190A8"  # from type
+    livery_name = "FW-190A8"
+    Liveries = Liveries()[livery_name]  # from type
 #ERRR <CLEAN>
 
     class Pylon1:
@@ -5468,7 +5521,8 @@ class Bf_109K_4(PlaneType):
                 None_ = 0
                 Flare_Gun = 1
 
-    livery_name = "BF-109K-4"  # from type
+    livery_name = "BF-109K-4"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         SC_501_SC500 = (1, Weapons.SC_501_SC500)
@@ -5504,7 +5558,8 @@ class SpitfireLFMkIX(PlaneType):
         },
     }
 
-    livery_name = "SPITFIRELFMKIX"  # from type
+    livery_name = "SPITFIRELFMKIX"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         British_GP_250LBS_Bomb_MK4_on_LH_Spitfire_Wing_Carrier = (1, Weapons.British_GP_250LBS_Bomb_MK4_on_LH_Spitfire_Wing_Carrier)
@@ -5550,7 +5605,8 @@ class SpitfireLFMkIXCW(PlaneType):
         },
     }
 
-    livery_name = "SPITFIRELFMKIXCW"  # from type
+    livery_name = "SPITFIRELFMKIXCW"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         British_GP_250LBS_Bomb_MK4_on_LH_Spitfire_Wing_Carrier = (1, Weapons.British_GP_250LBS_Bomb_MK4_on_LH_Spitfire_Wing_Carrier)
@@ -5599,7 +5655,8 @@ class P_51D(PlaneType):
         },
     }
 
-    livery_name = "P-51D"  # from livery_entry
+    livery_name = "P-51D"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         HVAR__UnGd_Rkt = (1, Weapons.HVAR__UnGd_Rkt)
@@ -5669,7 +5726,8 @@ class P_51D_30_NA(PlaneType):
         },
     }
 
-    livery_name = "P-51D"  # from livery_entry
+    livery_name = "P-51D"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         HVAR__UnGd_Rkt = (1, Weapons.HVAR__UnGd_Rkt)
@@ -5753,7 +5811,8 @@ class P_47D_30(PlaneType):
                 Empty = 0
                 Water = 1
 
-    livery_name = "P-47D-30"  # from livery_entry
+    livery_name = "P-47D-30"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AN_M30A1___100lb_GP_Bomb_LD = (1, Weapons.AN_M30A1___100lb_GP_Bomb_LD)
@@ -5840,7 +5899,8 @@ class P_47D_30bl1(PlaneType):
                 Empty = 0
                 Water = 1
 
-    livery_name = "P-47D-30"  # from livery_entry
+    livery_name = "P-47D-30"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AN_M30A1___100lb_GP_Bomb_LD = (1, Weapons.AN_M30A1___100lb_GP_Bomb_LD)
@@ -5913,7 +5973,8 @@ class P_47D_40(PlaneType):
                 Empty = 0
                 Water = 1
 
-    livery_name = "P-47D-30"  # from livery_entry
+    livery_name = "P-47D-30"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AN_M30A1___100lb_GP_Bomb_LD = (1, Weapons.AN_M30A1___100lb_GP_Bomb_LD)
@@ -6058,7 +6119,8 @@ class MosquitoFBMkVI(PlaneType):
                 Violet = 0.75
                 White = 0.05
 
-    livery_name = "MOSQUITOFBMKVI"  # from type
+    livery_name = "MOSQUITOFBMKVI"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         _250_lb_GP_Mk_IV = (1, Weapons._250_lb_GP_Mk_IV)
@@ -6144,7 +6206,8 @@ class A_20G(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = "A-20G"  # from type
+    livery_name = "A-20G"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         _4_x_AN_M64___500lb_GP_Bomb_LD = (1, Weapons._4_x_AN_M64___500lb_GP_Bomb_LD)
@@ -6182,7 +6245,8 @@ class A_10A(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = "A-10A"  # from type
+    livery_name = "A-10A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         LAU_105_2_AIM_9L = (1, Weapons.LAU_105_2_AIM_9L)
@@ -6485,7 +6549,8 @@ class A_10C(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = "A-10C"  # from type
+    livery_name = "A-10C"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM = (1, Weapons.LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM)
@@ -6962,7 +7027,8 @@ class A_10C_2(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
-    livery_name = "A-10CII"  # from livery_entry
+    livery_name = "A-10CII"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM = (1, Weapons.LAU_105_with_2_x_AIM_9M_Sidewinder_IR_AAM)
@@ -7553,7 +7619,8 @@ class AJS37(PlaneType):
                 Allow_non_generated = 2
                 Disallow_cartridge_switching = 3
 
-    livery_name = "AJS37"  # from type
+    livery_name = "AJS37"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Rb_24J__AIM_9P__Sidewinder_IR_AAM = (1, Weapons.Rb_24J__AIM_9P__Sidewinder_IR_AAM)
@@ -7867,7 +7934,8 @@ class AV8BNA(PlaneType):
         class AAR_Zone3:
             id = "AAR_Zone3"
 
-    livery_name = "AV8BNA"  # from type
+    livery_name = "AV8BNA"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -8138,7 +8206,8 @@ class KC130(PlaneType):
     tacan = True
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "KC130"  # from type
+    livery_name = "KC130"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -8162,7 +8231,8 @@ class KC135MPRS(PlaneType):
     tacan = True
     category = "Tankers"  #{8A302789-A55D-4897-B647-66493FA6826F}
 
-    livery_name = "KC135MPRS"  # from type
+    livery_name = "KC135MPRS"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -8244,7 +8314,8 @@ class C_101EB(PlaneType):
         class SmokeOnGround:
             id = "SmokeOnGround"
 
-    livery_name = "C-101EB"  # from type
+    livery_name = "C-101EB"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Smoke_System__White_Smoke_ = (1, Weapons.Smoke_System__White_Smoke_)
@@ -8338,7 +8409,8 @@ class C_101CC(PlaneType):
                 Forward_seat = 1
                 Rear_seat = 2
 
-    livery_name = "C-101CC"  # from type
+    livery_name = "C-101CC"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -8436,7 +8508,8 @@ class J_11A(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 127.5
 
-    livery_name = "J-11A"  # from type
+    livery_name = "J-11A"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_73__AA_11_Archer____Infra_Red = (1, Weapons.R_73__AA_11_Archer____Infra_Red)
@@ -8688,7 +8761,8 @@ class JF_17(PlaneType):
         class AARProbe:
             id = "AARProbe"
 
-    livery_name = "JF-17"  # from type
+    livery_name = "JF-17"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         DIS_PL_5EII = (1, Weapons.DIS_PL_5EII)
@@ -8849,7 +8923,8 @@ class KJ_2000(PlaneType):
     max_speed = 849.996
     category = "AWACS"  #{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}
 
-    livery_name = "KJ-2000"  # from type
+    livery_name = "KJ-2000"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 
@@ -8868,7 +8943,8 @@ class WingLoong_I(PlaneType):
     eplrs = True
     radio_frequency = 127.5
 
-    livery_name = "WINGLOONG-I"  # from type
+    livery_name = "WINGLOONG-I"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         DIS_AKD_10 = (1, Weapons.DIS_AKD_10)
@@ -8905,7 +8981,8 @@ class H_6J(PlaneType):
         class Belly_Bay_Door:
             id = "Belly Bay Door"
 
-    livery_name = "H-6J"  # from type
+    livery_name = "H-6J"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         DIS_GDJ_YJ83K = (1, Weapons.DIS_GDJ_YJ83K)
@@ -9027,7 +9104,8 @@ class Christen_Eagle_II(PlaneType):
         class NS430allow:
             id = "NS430allow"
 
-    livery_name = "CHRISTEN EAGLE II"  # from type
+    livery_name = "CHRISTEN EAGLE II"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Smoke_for_Christen_Eagle_II__white = (1, Weapons.Smoke_for_Christen_Eagle_II__white)
@@ -9157,7 +9235,8 @@ class F_16C_50(PlaneType):
                 JHMCS = 1
                 NVG = 2
 
-    livery_name = "F-16C_50"  # from type
+    livery_name = "F-16C_50"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -9421,7 +9500,8 @@ class F_5E(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 305
 
-    livery_name = "F-5E"  # from type
+    livery_name = "F-5E"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9B_Sidewinder_IR_AAM = (1, Weapons.AIM_9B_Sidewinder_IR_AAM)
@@ -9747,7 +9827,8 @@ class F_5E_3(PlaneType):
                 _8s = 3
                 _10s = 4
 
-    livery_name = "F-5E-3"  # from livery_entry
+    livery_name = "F-5E-3"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         AIM_9B_Sidewinder_IR_AAM = (1, Weapons.AIM_9B_Sidewinder_IR_AAM)
@@ -9963,7 +10044,8 @@ class F_86F_Sabre(PlaneType):
         },
     }
 
-    livery_name = "F-86F SABRE"  # from livery_entry
+    livery_name = "F-86F SABRE"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         Fuel_Tank_200_gallons = (1, Weapons.Fuel_Tank_200_gallons)
@@ -10167,7 +10249,8 @@ class F_14B(PlaneType):
         class LGB1:
             id = "LGB1"
 
-    livery_name = "F-14B"  # from type
+    livery_name = "F-14B"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         LAU_138_AIM_9M = (1, Weapons.LAU_138_AIM_9M)
@@ -10532,7 +10615,8 @@ class F_14A_135_GR(PlaneType):
         class LGB1:
             id = "LGB1"
 
-    livery_name = "F-14A-135-GR"  # from type
+    livery_name = "F-14A-135-GR"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         LAU_138_AIM_9M = (1, Weapons.LAU_138_AIM_9M)
@@ -10864,7 +10948,8 @@ class FA_18C_hornet(PlaneType):
                 JHMCS = 1
                 NVG = 2
 
-    livery_name = "FA-18C_HORNET"  # from type
+    livery_name = "FA-18C_HORNET"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         AIM_9M_Sidewinder_IR_AAM = (1, Weapons.AIM_9M_Sidewinder_IR_AAM)
@@ -11250,7 +11335,8 @@ class Hawk(PlaneType):
         },
     }
 
-    livery_name = "HAWK"  # from type
+    livery_name = "HAWK"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         LAU_7_with_AIM_9M_Sidewinder_IR_AAM = (1, Weapons.LAU_7_with_AIM_9M_Sidewinder_IR_AAM)
@@ -11314,7 +11400,8 @@ class I_16(PlaneType):
         class landingTorch:
             id = "landingTorch"
 
-    livery_name = "I-16"  # from type
+    livery_name = "I-16"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         I16_RS_82 = (1, Weapons.I16_RS_82)
@@ -11421,7 +11508,8 @@ class L_39C(PlaneType):
         class DismountGunSight:
             id = "DismountGunSight"
 
-    livery_name = "L-39C"  # from type
+    livery_name = "L-39C"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         FAB_100___100kg_GP_Bomb_LD = (1, Weapons.FAB_100___100kg_GP_Bomb_LD)
@@ -11534,7 +11622,8 @@ class L_39ZA(PlaneType):
         class DismountIFRHood:
             id = "DismountIFRHood"
 
-    livery_name = "L-39ZA"  # from livery_entry
+    livery_name = "L-39ZA"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         FAB_100___100kg_GP_Bomb_LD = (1, Weapons.FAB_100___100kg_GP_Bomb_LD)
@@ -11743,7 +11832,8 @@ class M_2000C(PlaneType):
         class DisableVTBExport:
             id = "DisableVTBExport"
 
-    livery_name = "M-2000C"  # from type
+    livery_name = "M-2000C"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Matra_Magic_II = (1, Weapons.Matra_Magic_II)
@@ -11886,7 +11976,8 @@ class MQ_9_Reaper(PlaneType):
     max_speed = 400
     eplrs = True
 
-    livery_name = "MQ-9 REAPER"  # from type
+    livery_name = "MQ-9 REAPER"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         GBU_12___500lb_Laser_Guided_Bomb = (1, Weapons.GBU_12___500lb_Laser_Guided_Bomb)
@@ -11927,7 +12018,8 @@ class MiG_15bis(PlaneType):
     category = "Interceptor"  #{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}
     radio_frequency = 3.75
 
-    livery_name = "MIG-15BIS"  # from livery_entry
+    livery_name = "MIG-15BIS"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         FAB_50 = (1, Weapons.FAB_50)
@@ -12006,7 +12098,8 @@ class MiG_19P(PlaneType):
                 FAR = 1
                 NEAR = 2
 
-    livery_name = "MIG-19P"  # from type
+    livery_name = "MIG-19P"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         K_13A = (1, Weapons.K_13A)
@@ -12094,7 +12187,8 @@ class MiG_21Bis(PlaneType):
         },
     }
 
-    livery_name = "MIG-21BIS"  # from livery_entry
+    livery_name = "MIG-21BIS"
+    Liveries = Liveries()[livery_name]  # from livery_entry
 
     class Pylon1:
         UB_16UM___16_S_5M = (1, Weapons.UB_16UM___16_S_5M)
@@ -12225,7 +12319,8 @@ class Su_34(PlaneType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
-    livery_name = "SU-34"  # from type
+    livery_name = "SU-34"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         R_73__AA_11_Archer____Infra_Red = (1, Weapons.R_73__AA_11_Archer____Infra_Red)
@@ -12560,7 +12655,8 @@ class Yak_52(PlaneType):
                 Ask_Always = -1
                 Equally_Responsible = -2
 
-    livery_name = "YAK-52"  # from type
+    livery_name = "YAK-52"
+    Liveries = Liveries()[livery_name]  # from type
 
     class Pylon1:
         Smoke_Generator___red_ = (1, Weapons.Smoke_Generator___red_)
@@ -12698,7 +12794,8 @@ class TF_51D(PlaneType):
         },
     }
 
-    livery_name = "TF-51D"  # from type
+    livery_name = "TF-51D"
+    Liveries = Liveries()[livery_name]  # from type
 
     pylons: Set[int] = set()
 

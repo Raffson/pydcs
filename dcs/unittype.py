@@ -1,11 +1,11 @@
 import dcs.lua as lua
-from dcs.liveries_scanner import Liveries, Livery
 from dcs.payloads import PayloadDirectories
 import re
 import sys
 from typing import Any, Dict, List, Optional, Set, Type, Union, TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from dcs.liveries_scanner import Livery
     from dcs.task import MainTask
 
 
@@ -85,7 +85,7 @@ class FlyingType(UnitType):
 
     pylons: Set[int] = set()
     livery_name: Optional[str] = None
-    Liveries: Set[Livery] = set()
+    Liveries: Set[Type["Livery"]] = set()
     # Dict from payload name to the DCS payload structure. None if not yet initialized.
     payloads: Optional[Dict[str, Dict[str, Any]]] = None
 
@@ -94,10 +94,6 @@ class FlyingType(UnitType):
 
     _payload_cache = None
     _UnitPayloadGlobals = None
-
-    @classmethod
-    def __init__(cls) -> None:
-        cls.Liveries = Liveries()[cls.livery_name]
 
     @classmethod
     def scan_payload_dir(cls):

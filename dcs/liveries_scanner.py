@@ -272,9 +272,8 @@ class Liveries:
 
 
 if __name__ == "__main__":
-	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2
+	from planes import FA_18C_hornet, F_16C_50, F_14B, F_15E, A_10C_2, Liveries
 	# for some reason 'Liveries' in the current scope is a different object
-	from unittype import Liveries
 	f18 = FA_18C_hornet()
 	print(f18.livery_name, id(Liveries.map), sorted(f18.Liveries))
 	Liveries.initialize()  # default initialization
