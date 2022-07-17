@@ -129,15 +129,15 @@ class Liveries:
 			countries = set(filter(lambda x: x != "", locals()['country_list']))
 
 		order = regex_group_extractor(r'^order\s*=\s*(-?[0-9]+)\s*(?:--.*)?$', luacode, 0)
-		if not isinstance(order, int):
+		order = None if path_id == "default" else order
+		if order is not None and not isinstance(order, int):
 			try:
 				order = int(order)
 			except ValueError:
 				order = 0
-		order = None if path_id == "default" else order
 		
 		livery = Livery(path_id, livery_name, order, countries)
-		Liveries()[unit] = {livery}
+		Liveries.map[unit].update({livery})
 
 	@staticmethod
 	def scan_lua_description(path: str, unit: str) -> None:
