@@ -6,6 +6,10 @@ import zipfile
 from dcs.installation import get_dcs_install_directory, get_dcs_saved_games_directory
 from typing import Optional, Dict, Iterator, Set, Tuple
 
+campaign_livery_aliases = {
+	"FW-190D-9": "FW-190D9",
+}
+
 
 def regex_group_extractor(regex: str, text: str, fallback=None):
 	match = re.search(regex, text, re.MULTILINE)
@@ -197,28 +201,33 @@ class Liveries:
 						Liveries.scan_lua_code(code, path, unit)
 
 	@staticmethod
-	def scan_liveries(path: str) -> None:
+	def scan_liveries(path: str, campaign_path: bool = False) -> None:
 		"""
 		Scans liveries for all units in the given path.
 
 		:param path: A 'Liveries' path containing one or more units
+		:param campaign_path: A boolean value indicating whether the path
+			is special livery path for 3rd party campaigns. This is important
+			because in some cases aliases are used for certain units. This would
+			result in separate entries in the Liveries map, which is not good.
 		"""
 		if not os.path.exists(path):
 			return
 		for unit in os.listdir(path):
-			# The unit's name for liveries is NOT case-sensitive
+			liveries_path = os.path.join(path, unit)
+			# The unit's name for liveries is NOT case-sensitive,
+			# e.g.: 'Saved Games/Liveries/f-15c' vs 'DCS-install/Bazar/Liveries/F-15C
 			# thus convert 'unit' to upper/lower to make sure everything "merges properly"
 			unit = unit.upper()
-			if "COCKPIT" in unit:
+			if "COCKPIT" in unit or not os.path.isdir(liveries_path):
 				# Some custom mods put their cockpit liveries in the same directory,
-				# for the time being we don't want to load those...
+				# for the time being we don't want to load those.
+				# Other than that we're looking exclusively for directories.
 				continue
-			liveries_path = os.path.join(path, unit)
-			if not os.path.isdir(liveries_path):
-				continue
+			if campaign_path and unit in campaign_livery_aliases:
+				unit = campaign_livery_aliases[unit]
 			if unit not in Liveries.map:
 				Liveries.map[unit.upper()] = set()
-			liveries_path = os.path.join(path, unit)
 			for livery in os.listdir(liveries_path):
 				livery_path = os.path.join(liveries_path, livery)
 				if os.path.isdir(livery_path):
@@ -252,7 +261,7 @@ class Liveries:
 		for campaign in os.listdir(path):
 			liveries_path = os.path.join(path, campaign, "Liveries")
 			if os.path.exists(liveries_path):
-				Liveries.scan_liveries(liveries_path)
+				Liveries.scan_liveries(liveries_path, campaign_path=True)
 
 	@staticmethod
 	def scan_dcs_installation(install: str = ""):
