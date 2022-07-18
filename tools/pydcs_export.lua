@@ -12,8 +12,6 @@ local export_path = base_path .. "dcs\\"
 
 local log_file = io.open(base_path.."export.log", "w")
 
-local loadLiveries = require('loadLiveries')
-
 -------------------------------------------------------------------------------
 -- helper functions
 -------------------------------------------------------------------------------
@@ -428,13 +426,12 @@ from dcs.liveries_scanner import Liveries
             end
         end
 
-        local schemes = loadLiveries.loadSchemes(plane.type, nil) -- Get all possible liveries
         writeln(file, "")
         if plane.livery_entry ~= nil then
             local name = string.upper(plane.livery_entry)
             writeln(file, '    livery_name = "'..name..'"  # from livery_entry')
             writeln(file, '    Liveries = Liveries()[livery_name]')
-        else if schemes ~= nil and #schemes > 0 and plane.type ~= nil then
+        else if plane.type ~= nil then
             local name = string.upper(string.gsub(plane.type, '/', '_'))
             writeln(file, '    livery_name = "'..name..'"  # from type')
             writeln(file, '    Liveries = Liveries()[livery_name]')

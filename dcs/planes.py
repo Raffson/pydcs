@@ -12688,6 +12688,8 @@ class B_17G(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
+    livery_name = "B-17G"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         _12_AN_M64___500lb_GP_Bomb_LD = (1, Weapons._12_AN_M64___500lb_GP_Bomb_LD)
@@ -12714,6 +12716,8 @@ class Ju_88A4(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
+    livery_name = "JU-88A4"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         LTF_5b_Aerial_Torpedo = (1, Weapons.LTF_5b_Aerial_Torpedo)
@@ -12761,6 +12765,8 @@ class C_47(PlaneType):
     property_defaults: Dict[str, Any] = {
     }
 
+    livery_name = "C-47"  # from type
+    Liveries = Liveries()[livery_name]
 
     pylons: Set[int] = set()
 

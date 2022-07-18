@@ -962,6 +962,8 @@ class OH_58D(HelicopterType):
     chaff_charge_size = 1
     flare_charge_size = 1
 
+    livery_name = "OH-58D"  # from type
+    Liveries = Liveries()[livery_name]
 
     class Pylon1:
         M260_HYDRA = (1, Weapons.M260_HYDRA)

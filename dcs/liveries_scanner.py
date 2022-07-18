@@ -146,7 +146,7 @@ class Liveries:
 			return
 		livery_name = regex_group_extractor(r'^name\s*=\s*"(.*)"\s*(?:--.*)?$', luacode, path_id)
 
-		regex = r'^countries\s*=\s*(\{["[A-Z]+"\s*]?(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*(?:--.*)?$'
+		regex = r'^countries\s*=\s*(\{\s*"[A-Z]+"\s*(?:,\s*"[A-Z]+"\s*)*\s*,?\s*\})\s*(?:--.*)?$'
 		countries = regex_group_extractor(regex, luacode)
 		if countries is not None:
 			exec(f"country_list = {countries}")
@@ -271,12 +271,14 @@ class Liveries:
 		path3 = os.path.join(root, "Bazar", "Liveries")
 		path4 = os.path.join(root, "Mods", "campaigns")
 		path5 = os.path.join(root, "CoreMods", "tech")
+		path6 = os.path.join(root, "Mods", "tech", "WWII Units", "Liveries")
 
 		Liveries.scan_mods_path(path1)
 		Liveries.scan_mods_path(path2)
 		Liveries.scan_liveries(path3)
 		Liveries.scan_campaign_liveries(path4)
 		Liveries.scan_mods_path(path5)
+		Liveries.scan_liveries(path6)
 
 	@staticmethod
 	def scan_custom_liveries(saved_games: str = ""):
